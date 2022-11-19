@@ -9,11 +9,13 @@ export const StyledLinkList = styled.ul.attrs({
   flex-direction: column;
   justify-content: space-around;
   flex: 1 0;
+  margin-bottom: 1.5rem;
 `;
 
 export const StyledSocialLinkList = styled(StyledLinkList)`
   justify-content: flex-end;
   flex: 0 0 auto;
+  margin: 0;
 `;
 
 interface IProps {

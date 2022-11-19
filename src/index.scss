@@ -45,7 +45,7 @@ main {
 body.no_scroll {
   overflow: hidden;
 }
-//typogtaphy
+//typography
 h1,
 h2,
 h3,
@@ -440,7 +440,7 @@ li.social_item {
     margin: 0;
   }
   i {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     height: 30px;
   }
 }
@@ -467,9 +467,6 @@ li.social_item {
   h2 {
     margin-bottom: 0rem;
     font-size: 1.2rem;
-    // font-size: 1.1rem;
-    // font-weight: 700;
-    // line-height: 1.4;
     // @media all and (min-width: $sm-min) {
     //   font-size: 1.3rem;
     // }
@@ -585,175 +582,11 @@ li.social_item {
    skills boxes
 ***********************/
 .skills_section {
-  .boxes {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    // margin-bottom: 3.5rem;
-    // @media all and (min-width: $md-min) {
-    //   margin-bottom: 4rem;
-    // }
-    h2 {
-      //font-size: 3rem;
-      // font-size: 1.3rem;
-      // letter-spacing: 1px;
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      line-height: 1.4;
-    }
-    > p {
-      padding: 0 2rem;
-      margin-bottom: 2rem;
-    }
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
   }
-  .boxes_inner {
-    display: flex;
-    flex-direction: column;
-    @media all and (min-width: $lg-min) {
-      flex-direction: row !important;
-      flex-wrap: wrap;
-    }
-    &.workingWays {
-      @media all and (min-width: $md-min) {
-        flex-direction: row !important;
-        flex-wrap: wrap;
-      }
-    }
-    .box {
-      &:nth-of-type(1) {
-        border-top-left-radius: $themeBorder_radius;
-        border-top-right-radius: $themeBorder_radius;
-      }
-      &:nth-of-type(3) {
-        border-bottom-left-radius: $themeBorder_radius;
-        border-bottom-right-radius: $themeBorder_radius;
-      }
-      // background: $themedarkgrey;
-      min-height: 320px;
-      overflow: hidden;
-      position: relative;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: top center;
-      display: flex;
-      flex: 0 0 25%;
-      // flex: 0 0 33.33%;
-      // &:nth-child(odd):not(:first-child) {
-      //   background: $linkcolor !important;
-      // }
-      // &:nth-child(even) {
-      //   background: $themedarkgrey !important;
-      // }
-      // &:first-child {
-      //   &:before {
-      //     position: absolute;
-      //     top: 0;
-      //     right: 0;
-      //     bottom: 0;
-      //     left: 0;
-      //     background: rgba(0, 0, 0, 0.6);
-      //     content: "";
-      //     display: block;
-      //     z-index: 0;
-      //   }
-      // }
-      img {
-        width: 100%;
-      }
-      ul {
-        list-style: initial;
-        color: #fff;
-      }
-      &.workingWays {
-        flex: 0 0 50%;
-        height: auto;
-        ul {
-          list-style: none;
-          padding-left: 0;
-        }
-        .boxes_text_part_inner {
-          @media all and (max-width: $sm-max) {
-            padding: 2rem 0;
-          }
-        }
-        &:nth-child(odd) {
-          background: $dark_green_bg !important;
-        }
-        @media all and (min-width: $lg-min) {
-          &:nth-of-type(2) {
-            border-top-right-radius: $themeBorder_radius;
-            border-bottom-right-radius: $themeBorder_radius;
-          }
-        }
-        &:first-child {
-          &:before {
-            background: none;
-          }
-          .boxes_text_part_outer {
-            @media all and (min-width: $md-min) {
-              width: 100%;
-              text-align: right;
-            }
-          }
-        }
-      }
-      @media all and (min-width: $lg-min) {
-        height: 880px;
-        &:nth-of-type(1) {
-          border-top-right-radius: 0;
-          border-bottom-left-radius: $themeBorder_radius;
-        }
-        &:nth-of-type(3) {
-          border-bottom-left-radius: 0;
-          border-top-right-radius: $themeBorder_radius;
-        }
-      }
-    }
-  }
-  .boxes_text_part_outer {
-    //general for both sides
-    position: relative;
-    z-index: 10;
-    //padding: 2.5rem 2rem;
-    padding: 0;
-    //max-width: calc((1380px / 2) + 2.25rem);
-    max-width: 100%;
-    // @media all and (min-width: $sm-min) {
-    //   padding: 2.5rem;
-    // }
-    // @media all and (min-width: $md-min) {
-    //   padding: 3rem;
-    // }
-    // @media all and (min-width: $xl-min) {
-    //   padding: 4rem;
-    // }
-    .boxes_text_part_inner {
-      @media all and (max-width: $sm-max) {
-        // padding: 5.6rem 0;
-        padding: 3rem 0;
-      }
-      ul {
-        padding-left: 1rem;
-      }
-      li {
-        margin-bottom: 1.7rem;
-      }
-      p {
-        color: #fff;
-        @media all and (min-width: $xl-min) {
-          //font-size: 1rem;
-        }
-        strong {
-          letter-spacing: 0.5px;
-        }
-      }
-      h3 {
-        color: #fff;
-        letter-spacing: 0.5px;
-        margin-bottom: 2rem;
-      }
-    }
-  } //new skills
   .skills_row {
     margin-bottom: 1.5rem;
     @media all and (min-width: $xxl-min) {
@@ -773,11 +606,11 @@ li.social_item {
     }
     .icon {
       margin-bottom: 0.5rem;
-      font-size: 2.1rem;
+      font-size: 2.5rem;
       color: $themeLightHeadingcolor;
     }
     .text {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
     }
   }
 }
