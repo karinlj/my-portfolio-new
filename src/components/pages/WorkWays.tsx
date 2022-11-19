@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
 import { IWorkingWays } from "../../interfaces";
-import sunflower from "../../images/sunflower_1.jpg";
+import sunflower from "../../images/sunflower_4.jpg";
 import { ImageWrapper } from "./Home";
 
 const WorkWays = () => {
