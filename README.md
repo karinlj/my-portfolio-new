@@ -4,8 +4,6 @@
 
 Portfolio project in progress using React.js and Contentful.
 
-![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
-
 ##### Url: http://karinljunggren.com/
 
 ### Prerequisites
@@ -16,7 +14,7 @@ NodeJS
 
 To clone
 
-`git clone https://github.com/karinlj/karins-portfolio.git`
+`git clone https://github.com/karinlj/my-portfolio-new.git`
 
 To install
 
