@@ -5,6 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { IAbout } from "../../interfaces";
 //import monstera_dark from "../../images/monstera_dark_2.jpg";
 import sunflower from "../../images/sunflower_3.jpg";
+import { ImageWrapper } from "./Home";
 
 const AboutMe = () => {
   const [aboutData, setAboutData] = useState<IAbout | null>(null);
@@ -33,8 +34,7 @@ const AboutMe = () => {
   return (
     <main className="about">
       <div className="container">
-        <div
-          className="home_img_wrapper"
+        <ImageWrapper
           style={{
             background: `url(${sunflower})`,
             backgroundRepeat: "no-repeat",
@@ -50,7 +50,7 @@ const AboutMe = () => {
                 : ""}
             </div>
           </div>
-        </div>
+        </ImageWrapper>
       </div>
     </main>
   );

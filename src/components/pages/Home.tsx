@@ -1,10 +1,81 @@
 import { useState, useEffect } from "react";
 //import monstera_lighter from "../../images/monstera_lighter.jpg";
 import sunflower from "../../images/sunflower_2.jpg";
-
 import { client } from "../../client";
-
 import { IAbout } from "../../interfaces";
+import styled from "styled-components";
+import { colors, device } from "../styles/variables";
+
+export const ImageWrapper = styled.section.attrs({
+  className: "image_wrapper",
+})`
+  position: relative;
+  border-radius: $themeBorder_radius;
+  height: calc(100vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    content: "";
+    display: block;
+    border-radius: $themeBorder_radius;
+  }
+`;
+
+const HeadingSection = styled.section.attrs({
+  className: "heading_section",
+})`
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+`;
+
+const HomeHeading = styled.h1.attrs({
+  className: "home_heading",
+})`
+  font-size: 3.8rem;
+  position: relative;
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+  @media ${device.mobileS} {
+    font-size: 5.5rem;
+  }
+  @media ${device.mobileM} {
+    font-size: 6.5rem;
+  }
+  @media ${device.laptop} {
+    font-size: 7rem;
+  }
+  @media ${device.laptopL} {
+    font-size: 8rem;
+  }
+`;
+
+const HomeSubHeading = styled.p.attrs({
+  className: "home_sub_heading",
+})`
+  font-size: 1.6rem;
+  color: ${colors.themeLightHeadingcolor};
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+  position: relative;
+
+  @media ${device.mobileS} {
+    font-size: 3.8rem;
+  }
+  @media ${device.mobileM} {
+    font-size: 2rem;
+  }
+  @media ${device.laptop} {
+    font-size: 2.4rem;
+  }
+`;
 
 const Home = () => {
   const [aboutData, setAboutData] = useState<IAbout | null>(null);
@@ -12,7 +83,6 @@ const Home = () => {
 
   //stop the fetch when component using it unmounts
   const abortContrl = new AbortController();
-
   const getAboutData = () => {
     client
       .getEntries({
@@ -41,27 +111,24 @@ const Home = () => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div
-              className="home_img_wrapper"
+            <ImageWrapper
               style={{
                 background: `url(${sunflower})`,
                 backgroundRepeat: "no-repeat",
               }}
             >
-              <section className="heading_box_section">
+              <HeadingSection>
                 {loadingAbout && <p className="loading">...Loading</p>}
                 {aboutData ? (
-                  <h1 className="home_name cursive">
-                    {aboutData.fields.heading}
-                    <span className="home_name_sub cursive">
-                      {aboutData.fields.text}
-                    </span>
-                  </h1>
+                  <div>
+                    <HomeHeading>{aboutData.fields.heading}</HomeHeading>
+                    <HomeSubHeading>{aboutData.fields.text}</HomeSubHeading>
+                  </div>
                 ) : (
                   ""
                 )}
-              </section>
-            </div>
+              </HeadingSection>
+            </ImageWrapper>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import SocialIcons from "../SocialIcons";
 import styled from "styled-components";
 
 export const StyledLinkList = styled.ul.attrs({
-  className: "StyledLinkList",
+  className: "styled_link_list",
 })`
   display: flex;
   flex-direction: column;
