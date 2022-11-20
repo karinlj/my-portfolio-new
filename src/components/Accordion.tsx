@@ -19,7 +19,7 @@ const Accordion = ({ heading, content }: ISubItem) => {
       aria-expanded={openAccordion ? "true" : "false"}
     >
       <div className="heading">
-        <h3>{heading}</h3>
+        <h4>{heading}</h4>
         <i className="fas fa-chevron-down arrow" aria-hidden="true"></i>
       </div>
       <p className="cv_content">{content}</p>

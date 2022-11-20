@@ -20,7 +20,7 @@ html {
 body {
   font-family: "Roboto", "Helvetica", sans-serif;
   //font-family: "Josefin Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: $themeLightHeadingcolor;
   background: $background_darkgrey;
   position: relative;
@@ -655,7 +655,6 @@ li.social_item {
     }
   }
 }
-//PAGES
 
 @keyframes transitionIn {
   0% {
@@ -783,46 +782,48 @@ li.social_item {
   h5,
   h6,
   p {
-    // color: #fff;
     color: $themecolor;
   }
   h1 {
     color: $themeLightHeadingcolor;
   }
+  h2 {
+    font-size: 1.6rem;
+  }
+  .row {
+    margin-bottom: 2rem;
+  }
+  .cv_link {
+    color: $linkcolor;
+    transition: all 1s ease;
+    &:hover {
+      filter: drop-shadow(0 0 3px white);
+    }
+  }
   .bg_wrapper {
+    position: relative;
+    padding: 3rem 2rem 1rem 2rem;
+    background: $background_light;
+    border-radius: $themeBorder_radius;
+    height: 100%;
     h1 {
       color: $themeHeadingcolor_dark;
     }
-    position: relative;
-    padding: 3rem 2rem;
-    // background: $lightgrey;
-    background: $background_light;
-    margin-bottom: 3rem;
-    border-radius: $themeBorder_radius;
-    // .wrapper {
-    //   width: 96%;
-    //   margin: 0 auto;
-    //   padding: 0 2%;
-    //   overflow: auto;
-    //   @media (min-width: $lg-min) {
-    //     width: 800px;
-    //     margin: 0 auto 0 auto;
-    //   }
-    // }
+    p {
+      font-size: 0.9rem;
+    }
   }
 }
 .curriculum_items {
   .curriculum_item {
     position: relative;
     width: 100%;
-    padding: 0.7rem 0;
-
+    padding: 0.5rem 0;
     a,
     li {
-      //color: #fff;
       color: $themecolor;
     }
-    h2 {
+    h3 {
       font-size: 1rem;
       letter-spacing: 0.8px;
       margin-bottom: 0rem;
@@ -844,7 +845,6 @@ li.social_item {
     }
     //sitelist
     .site {
-      // color: #fff;
       font-weight: 500;
       font-size: 0.8rem;
       letter-spacing: 0.5px;
@@ -853,8 +853,7 @@ li.social_item {
         position: relative;
         display: inline-block;
         margin-bottom: 0.3rem;
-        //  color: #fff;
-
+        color: $linkcolor;
         &:hover {
           color: $linkcolor;
           transition: all 0.5s ease;
@@ -866,9 +865,9 @@ li.social_item {
     .accordion {
       background: transparent;
       border: none;
-      padding: 0.5rem;
+      padding: 0.4rem;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      margin: 1rem auto;
+      margin: 0.5rem auto;
       border-radius: $themeBorder_radius;
       width: 100%;
       text-align: left;
@@ -878,20 +877,20 @@ li.social_item {
         padding: 0.5rem 1rem;
         display: flex;
         justify-content: space-between;
-        h3 {
+        h4 {
           font-size: 0.9rem;
           font-weight: 500;
           margin-bottom: 0;
         }
         .arrow {
           transition: all 0.3s linear;
-          //  color: #fff;
-          font-size: 1.1rem;
+          font-size: 0.9rem;
           margin-left: 0.5rem;
           height: 1rem;
+          color: $themecolor;
+          padding: 2px;
           &:hover {
-            filter: brightness(85%);
-            -webkit-filter: brightness(85%);
+            color: $linkcolor;
           }
         }
       }
@@ -921,6 +920,9 @@ li.social_item {
   }
 }
 
+/*********************
+   grid
+*********************/
 .my-gutters {
   margin-right: 0;
   margin-left: 0;

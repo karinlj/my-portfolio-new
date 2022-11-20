@@ -54,7 +54,7 @@ const Curriculum = () => {
             {/* Work Experience */}
             <div className="bg_wrapper">
               <div className="wrapper">
-                <HeaderPages heading="Work Experience" />
+                <h2>Work Experience</h2>
                 <section className="curriculum_items">
                   <div className="container">
                     <div className="row">
@@ -83,7 +83,8 @@ const Curriculum = () => {
             {/* education */}
             <div className="bg_wrapper">
               <div className="wrapper">
-                <HeaderPages heading="Education" />
+                <h2>Education</h2>
+
                 <section className="curriculum_items">
                   <div className="container">
                     <div className="row">
@@ -109,7 +110,14 @@ const Curriculum = () => {
           </div>
         </div>
 
-        <Link to="/%PUBLIC_URL%/Curriculum_dev.pdf">Curriculum.pdf</Link>
+        <Link
+          to="/curriculum_dev.pdf"
+          className="cv_link"
+          target="_blank"
+          download
+        >
+          Download Curriculum.pdf
+        </Link>
       </div>
     </main>
   );

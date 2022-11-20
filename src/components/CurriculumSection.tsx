@@ -11,7 +11,7 @@ function CurriculumSection({ entry }: IProps) {
 
   return (
     <article className="curriculum_item">
-      <h2>
+      <h3>
         <a
           href={titleLink}
           target="_blank"
@@ -21,7 +21,7 @@ function CurriculumSection({ entry }: IProps) {
           {title}
           {""}
         </a>
-      </h2>
+      </h3>
       <p className="date">{date} </p>
       <p className="description">{description}</p>
       {siteList &&
