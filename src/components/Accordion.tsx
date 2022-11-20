@@ -22,7 +22,7 @@ const Accordion = ({ heading, content }: ISubItem) => {
         <h3>{heading}</h3>
         <i className="fas fa-chevron-down arrow" aria-hidden="true"></i>
       </div>
-      <p className="content">{content}</p>
+      <p className="cv_content">{content}</p>
     </button>
   );
 };

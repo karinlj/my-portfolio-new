@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
 import CurriculumSection from "../CurriculumSection";
 import { ICurriculumItem } from "../../interfaces";
+import { Link } from "react-router-dom";
 
 const Curriculum = () => {
   const [workItems, setWorkItems] = useState<ICurriculumItem[] | null>(null);
@@ -46,9 +47,10 @@ const Curriculum = () => {
 
   return (
     <main className="curriculum">
+      <HeaderPages heading="Curriculum" />
       <div className="container">
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 col-lg-6">
             {/* Work Experience */}
             <div className="bg_wrapper">
               <div className="wrapper">
@@ -75,6 +77,9 @@ const Curriculum = () => {
                 </section>
               </div>
             </div>
+          </div>
+
+          <div className="col-12 col-lg-6">
             {/* education */}
             <div className="bg_wrapper">
               <div className="wrapper">
@@ -103,6 +108,8 @@ const Curriculum = () => {
             </div>
           </div>
         </div>
+
+        <Link to="/%PUBLIC_URL%/Curriculum_dev.pdf">Curriculum.pdf</Link>
       </div>
     </main>
   );

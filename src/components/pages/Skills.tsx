@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
-
 import { ISkillItem } from "../../interfaces";
 
 const Skills = () => {

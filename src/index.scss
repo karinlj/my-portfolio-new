@@ -783,28 +783,32 @@ li.social_item {
   h5,
   h6,
   p {
-    color: #fff;
+    // color: #fff;
+    color: $themecolor;
   }
   h1 {
     color: $themeLightHeadingcolor;
   }
   .bg_wrapper {
+    h1 {
+      color: $themeHeadingcolor_dark;
+    }
     position: relative;
-    padding: 3rem 0 5rem 0;
+    padding: 3rem 2rem;
     // background: $lightgrey;
-    background: $dark_green_bg;
+    background: $background_light;
     margin-bottom: 3rem;
     border-radius: $themeBorder_radius;
-    .wrapper {
-      width: 96%;
-      margin: 0 auto;
-      padding: 0 2%;
-      overflow: auto;
-      @media (min-width: $lg-min) {
-        width: 800px;
-        margin: 0 auto 0 auto;
-      }
-    }
+    // .wrapper {
+    //   width: 96%;
+    //   margin: 0 auto;
+    //   padding: 0 2%;
+    //   overflow: auto;
+    //   @media (min-width: $lg-min) {
+    //     width: 800px;
+    //     margin: 0 auto 0 auto;
+    //   }
+    // }
   }
 }
 .curriculum_items {
@@ -812,9 +816,11 @@ li.social_item {
     position: relative;
     width: 100%;
     padding: 0.7rem 0;
+
     a,
     li {
-      color: #fff;
+      //color: #fff;
+      color: $themecolor;
     }
     h2 {
       font-size: 1rem;
@@ -833,12 +839,12 @@ li.social_item {
       display: block;
       padding: 0.2rem 0 0.5rem 0;
       margin: 0;
-      color: #c1d7a8;
+      // color: #c1d7a8;
       font-size: 0.8rem;
     }
     //sitelist
     .site {
-      color: #fff;
+      // color: #fff;
       font-weight: 500;
       font-size: 0.8rem;
       letter-spacing: 0.5px;
@@ -847,7 +853,7 @@ li.social_item {
         position: relative;
         display: inline-block;
         margin-bottom: 0.3rem;
-        color: #fff;
+        //  color: #fff;
 
         &:hover {
           color: $linkcolor;
@@ -879,7 +885,7 @@ li.social_item {
         }
         .arrow {
           transition: all 0.3s linear;
-          color: #fff;
+          //  color: #fff;
           font-size: 1.1rem;
           margin-left: 0.5rem;
           height: 1rem;
@@ -889,7 +895,7 @@ li.social_item {
           }
         }
       }
-      .content {
+      .cv_content {
         margin-bottom: 0;
         padding: 0rem 1rem 0rem 2rem;
         font-size: 90%;
@@ -906,7 +912,7 @@ li.social_item {
         .arrow {
           transform: rotate(180deg);
         }
-        .content {
+        .cv_content {
           opacity: 1;
           max-height: 350px;
         }

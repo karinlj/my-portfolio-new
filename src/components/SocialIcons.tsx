@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { StyledSocialLinkList } from "../components/layout/Navlinks";
 
 interface IiconListItem {
@@ -19,7 +18,7 @@ const iconList: IiconListItem[] = [
     url: "https://se.linkedin.com/in/karin-ljunggren",
     icon: "fa-brands fa-linkedin-in",
     ariaLabel: "Karin Linkedin",
-    text: "Skills",
+    text: "Linkedin",
   },
   {
     url: "https://github.com/karinlj",
