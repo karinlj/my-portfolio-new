@@ -63,12 +63,12 @@ const linkList: IlistItem[] = [
 const Navlinks = ({ clickLink }: IProps) => {
   return (
     <>
-      <div className="link_item home_link">
+      {/* <div className="link_item home_link">
         <NavLink to="/" onClick={clickLink} className="link">
           <span className="link_icon cursive">K</span>
           <p className="link_text">Home</p>
         </NavLink>
-      </div>
+      </div> */}
 
       <div className="nav_links">
         <StyledLinkList>

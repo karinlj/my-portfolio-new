@@ -14,7 +14,7 @@ function App() {
     <div className="app" style={{ height: "100%" }}>
       <BrowserRouter>
         <NavBar />
-        <div className="content">
+        <div className="site_content">
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<About />} path="/about" />

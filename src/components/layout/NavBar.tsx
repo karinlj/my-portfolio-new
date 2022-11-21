@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navlinks from "./Navlinks";
 import ToggleBtn from "../../components/ToggleBtn";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -28,17 +29,23 @@ const NavBar = () => {
 
   return (
     <header className="nav_header" id="nav">
-      <div className="container">
-        <nav className="navbar_bigscreen">
-          <Navlinks />
-          <ToggleBtn toggleMenu={toggleMenu} mobileOpen={mobileOpen} />
-        </nav>
-        <nav
-          className={`navbar_mobile ${mobileOpen ? "navbar_mobile_open" : ""}`}
-        >
-          <Navlinks clickLink={clickLink} />
-        </nav>
+      <div className="link_item home_link">
+        <NavLink to="/" onClick={clickLink} className="link">
+          <span className="link_icon cursive">K</span>
+          <p className="link_text">Home</p>
+        </NavLink>
       </div>
+
+      <nav
+        className={`navbar_mobile ${mobileOpen ? "navbar_mobile_open" : ""}`}
+      >
+        <Navlinks clickLink={clickLink} />
+      </nav>
+      <ToggleBtn toggleMenu={toggleMenu} mobileOpen={mobileOpen} />
+
+      <nav className="navbar_bigscreen">
+        <Navlinks />
+      </nav>
     </header>
   );
 };
