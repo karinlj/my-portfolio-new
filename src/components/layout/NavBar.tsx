@@ -35,13 +35,13 @@ const NavBar = () => {
           <p className="link_text">Home</p>
         </NavLink>
       </div>
+      <ToggleBtn toggleMenu={toggleMenu} mobileOpen={mobileOpen} />
 
       <nav
         className={`navbar_mobile ${mobileOpen ? "navbar_mobile_open" : ""}`}
       >
         <Navlinks clickLink={clickLink} />
       </nav>
-      <ToggleBtn toggleMenu={toggleMenu} mobileOpen={mobileOpen} />
 
       <nav className="navbar_bigscreen">
         <Navlinks />

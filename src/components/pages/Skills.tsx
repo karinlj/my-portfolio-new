@@ -33,46 +33,43 @@ const Skills = () => {
     <main className="skills">
       <div className="container">
         <div className="row">
-          <div className="col-12 col-md-2">
+          <div className="col-12 col-lg-3 col-xl-2">
             <HeaderPages heading="My skills" />
           </div>
-
-          <div className="col-12 col-md-10">
+          <div className="col-12 col-lg-9 col-xl-10">
             <section className="skills_section">
-              <div className="container">
-                <section className="boxes">
-                  {loadingSkills && <p className="loading">...Loading</p>}
+              <section className="boxes">
+                {loadingSkills && <p className="loading">...Loading</p>}
 
-                  {skillItems &&
-                    skillItems.map((entry) => {
-                      return (
-                        <div className="skills_row">
-                          <h2 className="skills_heading">
-                            {" "}
-                            {entry.fields.title}
-                          </h2>
-                          <div className="row box_row" key={entry.sys.id}>
-                            {entry.fields.skills.map((item) => {
-                              return (
-                                <div className="col-2">
-                                  <div className="boxes_icon">
-                                    <div className="boxes_icon_content">
-                                      <i
-                                        className={`fa-${item.icon} icon`}
-                                        aria-hidden="true"
-                                      ></i>
-                                      <p className="text">{item.text}</p>
-                                    </div>
+                {skillItems &&
+                  skillItems.map((entry) => {
+                    return (
+                      <div className="skills_row">
+                        <h2 className="skills_heading">
+                          {" "}
+                          {entry.fields.title}
+                        </h2>
+                        <div className="row box_row" key={entry.sys.id}>
+                          {entry.fields.skills.map((item) => {
+                            return (
+                              <div className="col-4 col-lg-2">
+                                <div className="boxes_icon">
+                                  <div className="boxes_icon_content">
+                                    <i
+                                      className={`fa-${item.icon} icon`}
+                                      aria-hidden="true"
+                                    ></i>
+                                    <p className="text">{item.text}</p>
                                   </div>
                                 </div>
-                              );
-                            })}
-                          </div>
+                              </div>
+                            );
+                          })}
                         </div>
-                      );
-                    })}
-                </section>
-              </div>
+                      </div>
+                    );
+                  })}
+              </section>
             </section>
           </div>
         </div>

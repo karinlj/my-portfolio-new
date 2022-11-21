@@ -4,17 +4,20 @@ import sunflower from "../../images/sunflower_2.jpg";
 import { client } from "../../client";
 import { IAbout } from "../../interfaces";
 import styled from "styled-components";
-import { colors, device } from "../styles/variables";
+import { colors, device, themeSettings } from "../styles/variables";
 
 export const ImageWrapper = styled.section.attrs({
   className: "image_wrapper",
 })`
   position: relative;
-  border-radius: $themeBorder_radius;
-  height: calc(100vh - 7rem);
+  border-radius: ${themeSettings.themeBorder_radius};
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media ${device.mobileM} {
+    height: calc(100vh - 7rem);
+  }
   &::before {
     position: absolute;
     top: 0;
@@ -67,9 +70,6 @@ const HomeSubHeading = styled.p.attrs({
   position: relative;
 
   @media ${device.mobileS} {
-    font-size: 3.8rem;
-  }
-  @media ${device.mobileM} {
     font-size: 2rem;
   }
   @media ${device.laptop} {

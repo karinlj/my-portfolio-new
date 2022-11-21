@@ -56,24 +56,13 @@ const Curriculum = () => {
               <div className="wrapper">
                 <h2>Work Experience</h2>
                 <section className="curriculum_items">
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-12">
-                        {loadingWorkItems && (
-                          <p className="loading">...Loading</p>
-                        )}
-                        {workItems &&
-                          workItems.map((entry) => {
-                            return (
-                              <CurriculumSection
-                                entry={entry}
-                                key={entry.sys.id}
-                              />
-                            );
-                          })}
-                      </div>
-                    </div>
-                  </div>
+                  {loadingWorkItems && <p className="loading">...Loading</p>}
+                  {workItems &&
+                    workItems.map((entry) => {
+                      return (
+                        <CurriculumSection entry={entry} key={entry.sys.id} />
+                      );
+                    })}
                 </section>
               </div>
             </div>
@@ -86,24 +75,13 @@ const Curriculum = () => {
                 <h2>Education</h2>
 
                 <section className="curriculum_items">
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-12">
-                        {loadingSchoolItems && (
-                          <p className="loading">...Loading</p>
-                        )}
-                        {schoolItems &&
-                          schoolItems.map((entry) => {
-                            return (
-                              <CurriculumSection
-                                entry={entry}
-                                key={entry.sys.id}
-                              />
-                            );
-                          })}
-                      </div>
-                    </div>
-                  </div>
+                  {loadingSchoolItems && <p className="loading">...Loading</p>}
+                  {schoolItems &&
+                    schoolItems.map((entry) => {
+                      return (
+                        <CurriculumSection entry={entry} key={entry.sys.id} />
+                      );
+                    })}
                 </section>
               </div>
             </div>

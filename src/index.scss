@@ -162,10 +162,7 @@ section {
 .nav_header {
   padding: 0.5rem 1rem;
   background: $background_darkgrey_darker;
-  display: flex;
-  justify-content: space-between;
   height: 4rem;
-  width: 100%;
 
   @media all and (min-width: $md-min) {
     display: block;
@@ -200,39 +197,16 @@ section {
       display: flex;
     }
   }
-  //Mobile nav
-  .navbar_mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-
-    width: 50px;
-    background: pink;
-    // transition: transform 1s ease;
-    opacity: 0;
-    // position: relative;
-    z-index: 100;
-    @media all and (min-width: $md-min) {
-      display: none;
-    }
-    //toggle open menu
-    &.navbar_mobile_open {
-      // opacity: 1;
-      animation: transitionIn 1.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-    }
-  }
   //menu button
   .menu_btn {
     position: absolute;
     top: 0.4rem;
-    right: 15px; //0
+    right: 1rem; //0
     // position: relative;
     z-index: 10000;
-    width: 60px;
-    height: 60px;
-    padding: 0 1rem;
+    width: 50px;
+    height: 50px;
+    padding: 0 0.7rem;
     margin-right: -0.9rem;
     background: transparent;
     display: flex;
@@ -298,6 +272,30 @@ section {
       }
     }
   }
+  //Mobile nav
+  .navbar_mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 4rem;
+    width: 50px;
+    opacity: 0;
+    // position: relative;
+    //transition: transform 1.5s ease-in-out;
+    z-index: 100;
+    @media all and (min-width: $md-min) {
+      display: none;
+    }
+    //toggle open menu
+    &.navbar_mobile_open {
+      //  opacity: 1;
+      animation: transitionIn 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+  }
   //links
   .nav_links {
     display: flex;
@@ -305,13 +303,13 @@ section {
     justify-content: space-between;
     background: $background_darkgrey_darker;
     height: auto;
-    padding-top: 2rem;
-    position: fixed;
-    right: 0;
-    top: 4rem;
+    padding: 2rem 0;
+    // position: fixed;
+    // right: 0;
+    // top: 0;
     @media all and (min-width: $md-min) {
       height: 90%;
-      padding-top: 0;
+      padding: 0;
       position: relative;
       top: 0;
     }
@@ -371,10 +369,13 @@ section {
       visibility: visible;
     }
     .link_text {
-      font-size: 0.75rem;
+      font-size: 0.6rem;
       opacity: 0;
       visibility: hidden;
       margin: 0;
+      @media all and (min-width: $md-min) {
+        font-size: 0.75rem;
+      }
     }
   }
 }
@@ -383,9 +384,12 @@ section {
 *********************/
 
 li.social_item {
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
   text-align: center;
   width: 50px;
+  @media all and (min-width: $md-min) {
+    margin-bottom: 1rem;
+  }
   a.link {
     width: 50px;
     display: inline-block;
@@ -431,10 +435,13 @@ li.social_item {
     visibility: visible;
   }
   .link_text {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     opacity: 0;
     visibility: hidden;
     margin: 0;
+    @media all and (min-width: $md-min) {
+      font-size: 0.75rem;
+    }
   }
   i {
     font-size: 1.1rem;
@@ -447,7 +454,10 @@ li.social_item {
 ***********************/
 .header_pages {
   position: relative;
-  padding: 0 0 3rem 0;
+  padding: 0 0 2rem 0;
+  @media all and (min-width: $md-min) {
+    padding: 0 0 3rem 0;
+  }
   .heading {
     font-size: 2.9rem;
   }
@@ -578,6 +588,13 @@ li.social_item {
 /**********************
    skills boxes
 ***********************/
+.skills {
+  .header_pages {
+    .container {
+      padding: 0;
+    }
+  }
+}
 .skills_section {
   h2 {
     font-size: 1rem;
@@ -585,18 +602,25 @@ li.social_item {
     line-height: 1.4;
   }
   .skills_row {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    @media all and (min-width: $lg-min) {
+      margin-bottom: 1rem;
+    }
     @media all and (min-width: $xxl-min) {
       margin-bottom: 4rem;
     }
   }
-  .skills_heading {
-    &:first-child {
-      padding-top: 2rem;
+
+  .boxes {
+    @media all and (min-width: $md-min) {
+      margin-top: 2rem;
     }
   }
   .boxes_icon {
     margin-bottom: 2rem;
+    @media all and (min-width: $md-min) {
+      margin-bottom: 1.5rem;
+    }
     .boxes_icon_content {
       text-align: center;
       width: 50%;
@@ -608,47 +632,6 @@ li.social_item {
     }
     .text {
       font-size: 0.75rem;
-    }
-  }
-}
-/*********************
-   footer
-*********************/
-.footer {
-  padding: 1rem 1rem 1.5rem 1rem;
-  bottom: 0;
-  right: 0;
-  float: right;
-  p {
-    margin-bottom: 0;
-    font-size: 0.7rem;
-  }
-  .footer_logo_section {
-    .powered_by {
-      a {
-        &:hover {
-          filter: drop-shadow(0 0 3px white);
-          transition: all 1s ease;
-          text-decoration: none;
-        }
-      }
-      img {
-        display: inline;
-        margin: 0 0.6rem 0 0;
-        &.react_logo {
-          width: 4.3rem;
-          height: auto;
-        }
-        &.contentful_logo {
-          width: 7.6rem;
-          height: auto;
-        }
-      }
-    }
-  }
-  .footer_copy {
-    p {
-      color: #737373;
     }
   }
 }
@@ -785,9 +768,12 @@ li.social_item {
     color: $themeLightHeadingcolor;
   }
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    @media all and (min-width: $md-min) {
+      font-size: 1.6rem;
+    }
   }
-  .row {
+  .col-12 {
     margin-bottom: 2rem;
   }
   .cv_link {
@@ -799,7 +785,7 @@ li.social_item {
   }
   .bg_wrapper {
     position: relative;
-    padding: 3rem 2rem 1rem 2rem;
+    padding: 3rem 2rem;
     background: $background_light;
     border-radius: $themeBorder_radius;
     height: 100%;
@@ -936,8 +922,10 @@ li.social_item {
 *********************/
 .centered_text {
   margin: 0 auto;
+  padding: 3rem 0;
   @media all and (min-width: $md-min) {
     width: 75%;
+    padding: 0;
   }
   @media all and (min-width: $lg-min) {
     width: 80%;
