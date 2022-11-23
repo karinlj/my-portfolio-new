@@ -170,11 +170,17 @@ section {
     top: 0;
     height: 100%;
     width: 4.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .home_link {
     position: relative;
-    left: -5px;
+    width: 50px;
+    height: 50px;
+    // left: -5px;
     a.link {
       color: $linkcolor !important;
       font-weight: 700;
@@ -304,12 +310,9 @@ section {
     background: $background_darkgrey_darker;
     height: auto;
     padding: 2rem 0;
-    // position: fixed;
-    // right: 0;
-    // top: 0;
     @media all and (min-width: $md-min) {
-      height: 90%;
-      padding: 0;
+      height: 1000%;
+      padding: 1rem 0 0 0;
       position: relative;
       top: 0;
     }
