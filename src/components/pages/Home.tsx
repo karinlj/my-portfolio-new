@@ -1,21 +1,30 @@
 import { useState, useEffect } from "react";
 //import monstera_lighter from "../../images/monstera_lighter.jpg";
-import sunflower from "../../images/sunflower_2.jpg";
+import coverImage from "../../images/sunflower_3.jpg";
+import coverImageMobile from "../../images/sunflower_3_mobile.jpg";
+
 import { client } from "../../client";
 import { IAbout } from "../../interfaces";
 import styled from "styled-components";
 import { colors, device, themeSettings } from "../styles/variables";
 
-export const ImageWrapper = styled.section.attrs({
-  className: "image_wrapper",
-})`
+export const StyledImageWrapper = styled.section.attrs(
+  ({ className }): any => ({
+    className: "cover_image_wrapper",
+  })
+)`
   position: relative;
   border-radius: ${themeSettings.themeBorder_radius};
-  min-height: 500px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-image: url(${(props) => props.mobileImage});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   @media ${device.mobileM} {
+    background-image: url(${(props) => props.image});
     height: calc(100vh - 7rem);
   }
   &::before {
@@ -27,11 +36,11 @@ export const ImageWrapper = styled.section.attrs({
     background: rgba(0, 0, 0, 0.5);
     content: "";
     display: block;
-    border-radius: $themeBorder_radius;
+    border-radius: ${themeSettings.themeBorder_radius};
   }
 `;
 
-const HeadingSection = styled.section.attrs({
+const StyledHeadingSection = styled.section.attrs({
   className: "heading_section",
 })`
   display: flex;
@@ -39,7 +48,7 @@ const HeadingSection = styled.section.attrs({
   padding: 2rem;
 `;
 
-const HomeHeading = styled.h1.attrs({
+const StyledHomeHeading = styled.h1.attrs({
   className: "home_heading",
 })`
   font-size: 3.8rem;
@@ -60,7 +69,7 @@ const HomeHeading = styled.h1.attrs({
   }
 `;
 
-const HomeSubHeading = styled.p.attrs({
+const StyledHomeSubHeading = styled.p.attrs({
   className: "home_sub_heading",
 })`
   font-size: 1.6rem;
@@ -68,7 +77,6 @@ const HomeSubHeading = styled.p.attrs({
   font-family: "Amatic SC", cursive;
   font-weight: 700;
   position: relative;
-
   @media ${device.mobileS} {
     font-size: 2rem;
   }
@@ -111,24 +119,26 @@ const Home = () => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <ImageWrapper
-              style={{
-                background: `url(${sunflower})`,
-                backgroundRepeat: "no-repeat",
-              }}
+            <StyledImageWrapper
+              image={coverImage}
+              mobileImage={coverImageMobile}
             >
-              <HeadingSection>
+              <StyledHeadingSection>
                 {loadingAbout && <p className="loading">...Loading</p>}
                 {aboutData ? (
                   <div>
-                    <HomeHeading>{aboutData.fields.heading}</HomeHeading>
-                    <HomeSubHeading>{aboutData.fields.text}</HomeSubHeading>
+                    <StyledHomeHeading>
+                      {aboutData.fields.heading}
+                    </StyledHomeHeading>
+                    <StyledHomeSubHeading>
+                      {aboutData.fields.text}
+                    </StyledHomeSubHeading>
                   </div>
                 ) : (
                   ""
                 )}
-              </HeadingSection>
-            </ImageWrapper>
+              </StyledHeadingSection>
+            </StyledImageWrapper>
           </div>
         </div>
       </div>

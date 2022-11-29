@@ -4,8 +4,10 @@ import { client } from "../../client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { IAbout } from "../../interfaces";
 //import monstera_dark from "../../images/monstera_dark_2.jpg";
-import sunflower from "../../images/sunflower_3.jpg";
-import { ImageWrapper } from "./Home";
+import coverImage from "../../images/sunflower_2.jpg";
+import coverImageMobile from "../../images/sunflower_2_mobile.jpg";
+import { StyledImageWrapper } from "./Home";
+import { StyledCenteredText } from "../styles/general";
 
 const AboutMe = () => {
   const [aboutData, setAboutData] = useState<IAbout | null>(null);
@@ -34,13 +36,8 @@ const AboutMe = () => {
   return (
     <main className="about">
       <div className="container">
-        <ImageWrapper
-          style={{
-            background: `url(${sunflower})`,
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div className="centered_text">
+        <StyledImageWrapper image={coverImage} mobileImage={coverImageMobile}>
+          <StyledCenteredText>
             <HeaderPages heading="About Me" />
             {loadingAbout && <p className="loading">...Loading</p>}
 
@@ -49,8 +46,8 @@ const AboutMe = () => {
                 ? documentToReactComponents(aboutData.fields.aboutContent)
                 : ""}
             </div>
-          </div>
-        </ImageWrapper>
+          </StyledCenteredText>
+        </StyledImageWrapper>
       </div>
     </main>
   );

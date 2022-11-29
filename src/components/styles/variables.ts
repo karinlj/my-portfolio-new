@@ -1,5 +1,6 @@
 export const colors = {
   themeLightHeadingcolor: "#f7f4f1",
+  linkcolor: "ff66b3",
 };
 
 const size = {
@@ -22,4 +23,7 @@ export const device = {
 
 export const themeSettings = {
   themeBorder_radius: "8px",
+  $themeBox_shadow:
+    "0 7px 34px 0 rgba(0, 0, 0, 0.07), 0 11px 34px 0 rgba(0, 0, 0, 0.04)",
+  $themefont: "Roboto, Helvetica, sans-serif",
 };

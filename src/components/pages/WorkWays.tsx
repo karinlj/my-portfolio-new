@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
 import { IWorkingWays } from "../../interfaces";
-import sunflower from "../../images/sunflower_4.jpg";
-import { ImageWrapper } from "./Home";
+import coverImage from "../../images/sunflower_8.jpg";
+import coverImageMobile from "../../images/sunflower_8_mobile.jpg";
+import { StyledImageWrapper } from "./Home";
+import { StyledCenteredText } from "../styles/general";
 
 const WorkWays = () => {
   const [workingWays, setWorkingWays] = useState<IWorkingWays[] | null>(null);
@@ -34,13 +36,8 @@ const WorkWays = () => {
   return (
     <main className="work_ways">
       <div className="container">
-        <ImageWrapper
-          style={{
-            background: `url(${sunflower})`,
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div className="centered_text">
+        <StyledImageWrapper image={coverImage} mobileImage={coverImageMobile}>
+          <StyledCenteredText>
             <HeaderPages
               heading="How I like to work"
               subHeading="I am developing for people and value communication."
@@ -66,8 +63,8 @@ const WorkWays = () => {
                   })}
               </div>
             </div>
-          </div>
-        </ImageWrapper>
+          </StyledCenteredText>
+        </StyledImageWrapper>
       </div>
     </main>
   );
