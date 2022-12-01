@@ -1,11 +1,21 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
 import { IWorkingWays } from "../../interfaces";
 import coverImage from "../../images/sunflower_8.jpg";
 import coverImageMobile from "../../images/sunflower_8_mobile.jpg";
+import styled from "styled-components";
+
 import { StyledImageWrapper } from "./Home";
 import { StyledCenteredText } from "../styles/general";
+import { StyledH2 } from "../styles/general";
+
+const StyledSubHeader = styled(StyledH2).attrs({
+  className: "styled_sub_header",
+})`
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+`;
 
 const WorkWays = () => {
   const [workingWays, setWorkingWays] = useState<IWorkingWays[] | null>(null);
@@ -34,7 +44,7 @@ const WorkWays = () => {
   }, []);
 
   return (
-    <main className="work_ways">
+    <main>
       <div className="container">
         <StyledImageWrapper image={coverImage} mobileImage={coverImageMobile}>
           <StyledCenteredText>
@@ -52,7 +62,7 @@ const WorkWays = () => {
 
                     return (
                       <div className="col-12 col-md-6" key={index}>
-                        <h2 className="heading cursive">{title}</h2>
+                        <StyledSubHeader>{title}</StyledSubHeader>
                         <ul>
                           {list.map((item, index) => {
                             return <li key={index}>{item}</li>;

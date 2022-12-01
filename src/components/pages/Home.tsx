@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 //import monstera_lighter from "../../images/monstera_lighter.jpg";
 import coverImage from "../../images/sunflower_3.jpg";
 import coverImageMobile from "../../images/sunflower_3_mobile.jpg";
-
 import { client } from "../../client";
 import { IAbout } from "../../interfaces";
 import styled from "styled-components";
-import { colors, device, themeSettings } from "../styles/variables";
+import { device, themeSettings } from "../styles/variables";
+import { StyledH1 } from "../styles/general";
 
+//with props
 export const StyledImageWrapper = styled.section.attrs(
   ({ className }): any => ({
     className: "cover_image_wrapper",
@@ -48,13 +49,10 @@ const StyledHeadingSection = styled.section.attrs({
   padding: 2rem;
 `;
 
-const StyledHomeHeading = styled.h1.attrs({
+const StyledHomeHeading = styled(StyledH1).attrs({
   className: "home_heading",
 })`
   font-size: 3.8rem;
-  position: relative;
-  font-family: "Amatic SC", cursive;
-  font-weight: 700;
   @media ${device.mobileS} {
     font-size: 5.5rem;
   }
@@ -69,14 +67,10 @@ const StyledHomeHeading = styled.h1.attrs({
   }
 `;
 
-const StyledHomeSubHeading = styled.p.attrs({
+const StyledHomeSubHeading = styled(StyledH1).attrs({
   className: "home_sub_heading",
 })`
   font-size: 1.6rem;
-  color: ${colors.themeLightHeadingcolor};
-  font-family: "Amatic SC", cursive;
-  font-weight: 700;
-  position: relative;
   @media ${device.mobileS} {
     font-size: 2rem;
   }
@@ -127,10 +121,10 @@ const Home = () => {
                 {loadingAbout && <p className="loading">...Loading</p>}
                 {aboutData ? (
                   <div>
-                    <StyledHomeHeading>
+                    <StyledHomeHeading as="h1">
                       {aboutData.fields.heading}
                     </StyledHomeHeading>
-                    <StyledHomeSubHeading>
+                    <StyledHomeSubHeading as="p">
                       {aboutData.fields.text}
                     </StyledHomeSubHeading>
                   </div>

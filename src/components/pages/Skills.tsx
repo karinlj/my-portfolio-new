@@ -74,38 +74,6 @@ const Skills = () => {
           </div>
         </div>
       </div>
-
-      {/* {skillColumns &&
-                    skillColumns.map((entry, index) => {
-                      const { icon, title, content } = entry.fields;
-                      return (
-                        // <div
-                        //   className="box"
-                        //   style={{
-                        //     background: `url(${monstera_square2}) no-repeat`,
-                        //   }}
-                        //   key={entry.sys.id}
-                        // >
-                        <div className="box" key={entry.sys.id}>
-                          <div className="boxes_text_part_outer">
-                            <div className="boxes_text_part_inner">
-                            <i
-                                className={`fas fa-${icon} boxes_icon`}
-                                aria-hidden="true"
-                              ></i>
-                              <i
-                                className={`fab fa-${icon} boxes_icon`}
-                                aria-hidden="true"
-                              ></i> 
-                              <h3 className="heading"> {title}</h3>
-                              <div className="text">
-                                {documentToReactComponents(content)}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })} */}
     </main>
   );
 };

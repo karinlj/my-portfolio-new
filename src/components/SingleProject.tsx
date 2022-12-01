@@ -1,4 +1,5 @@
 import { IProject } from "../interfaces";
+//import { StyledH3 } from "./styles/general";
 
 interface IProps {
   project: IProject;

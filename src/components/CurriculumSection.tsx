@@ -1,6 +1,7 @@
 import React from "react";
 import Accordion from "./Accordion";
 import { ICurriculumItem } from "../interfaces";
+import { StyledH3 } from "./styles/general";
 
 interface IProps {
   entry: ICurriculumItem;
@@ -11,7 +12,7 @@ function CurriculumSection({ entry }: IProps) {
 
   return (
     <article className="curriculum_item">
-      <h3>
+      <StyledH3 as="h3">
         <a
           href={titleLink}
           target="_blank"
@@ -21,7 +22,7 @@ function CurriculumSection({ entry }: IProps) {
           {title}
           {""}
         </a>
-      </h3>
+      </StyledH3>
       <p className="date">{date} </p>
       <p className="description">{description}</p>
       {siteList &&

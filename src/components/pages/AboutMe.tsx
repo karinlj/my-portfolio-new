@@ -34,7 +34,7 @@ const AboutMe = () => {
   }, []);
 
   return (
-    <main className="about">
+    <main>
       <div className="container">
         <StyledImageWrapper image={coverImage} mobileImage={coverImageMobile}>
           <StyledCenteredText>

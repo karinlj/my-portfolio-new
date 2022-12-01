@@ -1,31 +1,72 @@
 import styled from "styled-components";
 import { colors, device, themeSettings } from "./variables";
 
-// h1 {
-//     font-size: 2.3rem;
-//     font-weight: 500;
-//     @media all and (min-width: $md-min) {
-//       font-size: 2.8rem;
-//     }
-//     @media all and (min-width: $lg-min) {
-//       font-size: 3.3rem;
-//     }
-//     @media all and (min-width: $xl-min) {
-//       font-size: 3.5rem;
-//     }
-//   }
-
 //typography
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//   font-weight: 500;
-//   color: ${colors.themeLightHeadingcolor};
-// }
-
+const BaseHeader = styled.span`
+  color: ${colors.themeLightHeadingcolor};
+  font-weight: 500;
+  position: relative;
+  line-height: 1.2;
+`;
+export const StyledH1 = styled(BaseHeader)`
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+  font-size: 2.3rem;
+  @media ${device.mobileM} {
+    font-size: 2.8rem;
+  }
+  @media ${device.laptop} {
+    font-size: 3.3rem;
+  }
+  @media ${device.laptopL} {
+    //font-size: 3.5rem;
+    font-size: 2.9rem;
+  }
+`;
+export const StyledH2 = styled(BaseHeader)`
+  font-size: 2rem;
+  @media ${device.mobileS} {
+    font-size: 2.1rem;
+  }
+  //kolla
+  @media ${device.mobileM} {
+    font-size: 2.2rem;
+  }
+  @media ${device.laptop} {
+    font-size: 2.2rem;
+  }
+  @media ${device.laptopL} {
+    font-size: 2.2rem;
+  }
+`;
+export const StyledH3 = styled(BaseHeader)`
+  font-size: 1.2rem;
+  // line-height: 1.4;
+  @media ${device.mobileS} {
+    font-size: 1.3rem;
+  }
+  @media ${device.laptopL} {
+    font-size: 1.4rem;
+  }
+`;
+export const StyledH4 = styled(BaseHeader)`
+  font-size: 1.15rem;
+  @media ${device.laptop} {
+    font-size: 1.25rem;
+  }
+  @media ${device.laptopL} {
+    font-size: 1.35rem;
+  }
+`;
+export const StyledH5 = styled(BaseHeader)`
+  font-size: 1.1rem;
+  @media ${device.mobileM} {
+    font-size: 1.1rem;
+  }
+  @media ${device.laptopL} {
+    font-size: 1.2rem;
+  }
+`;
 export const StyledCenteredText = styled.section.attrs({
   className: "centered_text",
 })`

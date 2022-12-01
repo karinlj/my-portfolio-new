@@ -41,77 +41,25 @@ main {
 body.no_scroll {
   overflow: hidden;
 }
-//typography
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 500;
-  color: $themeLightHeadingcolor;
-}
-h1 {
-  font-size: 2.3rem;
-  font-weight: 500;
-  @media all and (min-width: $md-min) {
-    font-size: 2.8rem;
-  }
-  @media all and (min-width: $lg-min) {
-    font-size: 3.3rem;
-  }
-  @media all and (min-width: $xl-min) {
-    font-size: 3.5rem;
-  }
-}
-h2 {
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 1.2;
-  @media all and (min-width: $sm-min) {
-    font-size: 2.1rem;
-  }
-  //kolla
-  @media all and (min-width: $md-min) {
-    font-size: 2.2rem;
-  }
-  //kolla
-  @media all and (min-width: $lg-min) {
-    font-size: 2.2rem;
-  }
-  @media all and (min-width: $xl-min) {
-    font-size: 2.2rem;
-  }
-}
-h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.4;
-  @media all and (min-width: $sm-min) {
-    font-size: 1.3rem;
-  }
-  @media all and (min-width: $xl-min) {
-    font-size: 1.4rem;
-  }
-}
-h4 {
-  font-size: 1.15rem;
-  @media all and (min-width: $lg-min) {
-    font-size: 1.25rem;
-  }
-  @media all and (min-width: $xl-min) {
-    font-size: 1.35rem;
-  }
-}
-h5 {
-  font-size: 1.1rem;
-  @media all and (min-width: $md-min) {
-    font-size: 1.1rem;
-  }
-  @media all and (min-width: $xl-min) {
-    font-size: 1.2rem;
-  }
-}
+
+// h4 {
+//   font-size: 1.15rem;
+//   @media all and (min-width: $lg-min) {
+//     font-size: 1.25rem;
+//   }
+//   @media all and (min-width: $xl-min) {
+//     font-size: 1.35rem;
+//   }
+// }
+// h5 {
+//   font-size: 1.1rem;
+//   @media all and (min-width: $md-min) {
+//     font-size: 1.1rem;
+//   }
+//   @media all and (min-width: $xl-min) {
+//     font-size: 1.2rem;
+//   }
+// }
 p,
 li {
   font-size: 1rem;
@@ -444,23 +392,6 @@ li.social_item {
   }
 }
 
-/**********************
-  header pages
-***********************/
-.header_pages {
-  position: relative;
-  padding: 0 0 2rem 0;
-  @media all and (min-width: $md-min) {
-    padding: 0 0 3rem 0;
-  }
-  .heading {
-    font-size: 2.9rem;
-  }
-  .sub_heading {
-    display: block;
-    font-family: "Roboto", "Helvetica", sans-serif;
-  }
-}
 /*********************
    filter
 *********************/
