@@ -1,6 +1,24 @@
 import { NavLink } from "react-router-dom";
 import SocialIcons from "../SocialIcons";
 import styled from "styled-components";
+import { device, colors } from "../styles/variables";
+
+const StyledNavLinks = styled.div.attrs({
+  className: "nav_links",
+})`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: ${colors.background_darkgrey_darker};
+  height: auto;
+  padding: 2rem 0;
+  @media ${device.mobileM} {
+    height: 1000%;
+    padding: 1rem 0 0 0;
+    position: relative;
+    top: 0;
+  }
+`;
 
 export const StyledLinkList = styled.ul.attrs({
   className: "styled_link_list",
@@ -70,7 +88,7 @@ const Navlinks = ({ clickLink }: IProps) => {
         </NavLink>
       </div> */}
 
-      <div className="nav_links">
+      <StyledNavLinks>
         <StyledLinkList>
           {linkList.map((item, index) => {
             return (
@@ -85,7 +103,7 @@ const Navlinks = ({ clickLink }: IProps) => {
         </StyledLinkList>
 
         <SocialIcons />
-      </div>
+      </StyledNavLinks>
     </>
   );
 };

@@ -1,6 +1,7 @@
 export const colors = {
   themeLightHeadingcolor: "#f7f4f1",
-  linkcolor: "ff66b3",
+  linkcolor: "#ff66b3",
+  background_darkgrey_darker: "#0d0d0d",
 };
 
 const size = {
