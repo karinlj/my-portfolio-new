@@ -1,4 +1,4 @@
-import { StyledSocialLinkList } from "../components/layout/Navlinks";
+import { StyledSocialLinkList } from "./layout/NavigationLinks";
 
 interface IiconListItem {
   url: string;

@@ -11,26 +11,26 @@ import Footer from "./components/layout/Footer";
 
 function App() {
   return (
-    <div className="app" style={{ height: "100%" }}>
-      <BrowserRouter>
-        <NavBar />
-        <div className="site_content">
-          <Routes>
-            <Route element={<Home />} path="/" />
-            <Route element={<About />} path="/about" />
-            <Route element={<Skills />} path="/skills" />
-            <Route element={<WorkWays />} path="/workWays" />
-            <Route element={<Projects></Projects>} path="/projects" />
-            <Route
-              element={<PersonalProjects></PersonalProjects>}
-              path="/personalProjects"
-            />
-            <Route element={<Curriculum />} path="/curriculum" />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
-    </div>
+    // <div className="app" style={{ height: "100%" }}>
+    <BrowserRouter>
+      <NavBar />
+      <div className="site_content">
+        <Routes>
+          <Route element={<Home />} path="/" />
+          <Route element={<About />} path="/about" />
+          <Route element={<Skills />} path="/skills" />
+          <Route element={<WorkWays />} path="/workWays" />
+          <Route element={<Projects></Projects>} path="/projects" />
+          <Route
+            element={<PersonalProjects></PersonalProjects>}
+            path="/personalProjects"
+          />
+          <Route element={<Curriculum />} path="/curriculum" />
+        </Routes>
+      </div>
+      <Footer />
+    </BrowserRouter>
+    // </div>
   );
 }
 

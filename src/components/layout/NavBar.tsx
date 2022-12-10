@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Navlinks from "./Navlinks";
+import NavigationLinks from "./NavigationLinks";
 import ToggleBtn from "../../components/ToggleBtn";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
@@ -24,12 +24,12 @@ const StyledNavHeader = styled.header.attrs({
   }
 `;
 const StyledHomeLinkWrapper = styled.div.attrs({
-  className: "home_link_wrapper",
+  className: "home_link",
 })`
   position: relative;
   width: 50px;
   height: 50px;
-  a.link {
+  .link_icon {
     color: ${colors.linkcolor} !important;
     font-weight: 700;
     font-size: 2.8rem;
@@ -90,7 +90,6 @@ const NavBar = () => {
   //prevent scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
-      //console.log("mobileOpen:", mobileOpen);
       document.body.classList.add("no_scroll");
     } else {
       document.body.classList.remove("no_scroll");
@@ -100,9 +99,8 @@ const NavBar = () => {
   return (
     <StyledNavHeader id="nav">
       <StyledHomeLinkWrapper>
-        <NavLink to="/" onClick={clickLink} className="link">
+        <NavLink to="/" onClick={clickLink}>
           <span className="link_icon cursive">K</span>
-          <p className="link_text">Home</p>
         </NavLink>
       </StyledHomeLinkWrapper>
       <ToggleBtn toggleMenu={toggleMenu} mobileOpen={mobileOpen} />
@@ -110,11 +108,11 @@ const NavBar = () => {
       <StyledNavbarMobile
         className={`navbar_mobile ${mobileOpen ? "navbar_mobile_open" : ""}`}
       >
-        <Navlinks clickLink={clickLink} />
+        <NavigationLinks clickLink={clickLink} />
       </StyledNavbarMobile>
 
       <StyledNavbarBigscreen>
-        <Navlinks />
+        <NavigationLinks />
       </StyledNavbarBigscreen>
     </StyledNavHeader>
   );

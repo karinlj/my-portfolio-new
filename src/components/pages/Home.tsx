@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 //import monstera_lighter from "../../images/monstera_lighter.jpg";
-import coverImage from "../../images/sunflower_3.jpg";
-import coverImageMobile from "../../images/sunflower_3_mobile.jpg";
+import coverImage from "../../images/sunflower_1.jpg";
+import coverImageMobile from "../../images/sunflower_1_mobile.jpg";
 import { client } from "../../client";
 import { IAbout } from "../../interfaces";
 import styled from "styled-components";
@@ -34,7 +34,7 @@ export const StyledImageWrapper = styled.section.attrs(
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     content: "";
     display: block;
     border-radius: ${themeSettings.themeBorder_radius};

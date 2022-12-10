@@ -108,3 +108,68 @@ export const StyledCenteredText = styled.section.attrs({
     margin-bottom: 2rem;
   }
 `;
+
+export const StyledLinkItem = styled.li.attrs({
+  className: "link_item",
+})`
+  text-align: center;
+  height: 50px;
+  a.link {
+    width: 50px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.5s ease;
+    padding: 1rem;
+    border-bottom: 2px solid transparent;
+    letter-spacing: 0.5px;
+    color: $navcolor;
+    text-decoration: none;
+    cursor: pointer;
+    &.active,
+    :visited {
+      color: $navcolor;
+    }
+    &.active {
+      filter: drop-shadow(0 0 3px white);
+    }
+    &:hover {
+      .link_icon {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .link_text {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .link_icon,
+  .link_text {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 600ms ease;
+  }
+  i {
+    font-size: 1.1rem;
+    @media all and (min-width: $md-min) {
+      font-size: 1.3rem;
+    }
+  }
+  .link_icon {
+    opacity: 1;
+    visibility: visible;
+  }
+  .link_text {
+    font-size: 0.6rem;
+    opacity: 0;
+    visibility: hidden;
+    margin: 0;
+    @media all and (min-width: $md-min) {
+      font-size: 0.75rem;
+    }
+  }
+`;

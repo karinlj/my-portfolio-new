@@ -38,9 +38,8 @@ const Skills = () => {
           </div>
           <div className="col-12 col-lg-9 col-xl-10">
             <section className="skills_section">
-              <section className="boxes">
+              <div className="container">
                 {loadingSkills && <p className="loading">...Loading</p>}
-
                 {skillItems &&
                   skillItems.map((entry) => {
                     return (
@@ -69,7 +68,7 @@ const Skills = () => {
                       </div>
                     );
                   })}
-              </section>
+              </div>
             </section>
           </div>
         </div>

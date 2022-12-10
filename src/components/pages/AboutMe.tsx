@@ -4,8 +4,8 @@ import { client } from "../../client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { IAbout } from "../../interfaces";
 //import monstera_dark from "../../images/monstera_dark_2.jpg";
-import coverImage from "../../images/sunflower_2.jpg";
-import coverImageMobile from "../../images/sunflower_2_mobile.jpg";
+import coverImage from "../../images/sunflower_8.jpg";
+import coverImageMobile from "../../images/sunflower_8_mobile.jpg";
 import { StyledImageWrapper } from "./Home";
 import { StyledCenteredText } from "../styles/general";
 

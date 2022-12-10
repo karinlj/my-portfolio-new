@@ -3,6 +3,12 @@ import SocialIcons from "../SocialIcons";
 import styled from "styled-components";
 import { device, colors } from "../styles/variables";
 
+import { StyledLinkItem } from "../styles/general";
+
+// const StyledNavLinkItem = styled(StyledLinkItem)`
+//   width: 50px;
+// `;
+
 const StyledNavLinks = styled.div.attrs({
   className: "nav_links",
 })`
@@ -12,6 +18,7 @@ const StyledNavLinks = styled.div.attrs({
   background: ${colors.background_darkgrey_darker};
   height: auto;
   padding: 2rem 0;
+  border-radius: 3px;
   @media ${device.mobileM} {
     height: 1000%;
     padding: 1rem 0 0 0;
@@ -48,6 +55,11 @@ interface IlistItem {
 
 const linkList: IlistItem[] = [
   {
+    url: "/",
+    icon: "fa-solid fa-house",
+    text: "Home",
+  },
+  {
     url: "/about",
     icon: "fa-solid fa-user",
     text: "About",
@@ -78,33 +90,24 @@ const linkList: IlistItem[] = [
     text: "CV",
   },
 ];
-const Navlinks = ({ clickLink }: IProps) => {
+const NavLinks = ({ clickLink }: IProps) => {
   return (
-    <>
-      {/* <div className="link_item home_link">
-        <NavLink to="/" onClick={clickLink} className="link">
-          <span className="link_icon cursive">K</span>
-          <p className="link_text">Home</p>
-        </NavLink>
-      </div> */}
+    <StyledNavLinks>
+      <StyledLinkList>
+        {linkList.map((item, index) => {
+          return (
+            <li className="link_item" key={index}>
+              <NavLink to={item.url} onClick={clickLink} className="link">
+                <i className={`${item.icon} link_icon`}></i>
+                <p className="link_text">{item.text}</p>
+              </NavLink>
+            </li>
+          );
+        })}
+      </StyledLinkList>
 
-      <StyledNavLinks>
-        <StyledLinkList>
-          {linkList.map((item, index) => {
-            return (
-              <li className="link_item" key={index}>
-                <NavLink to={item.url} onClick={clickLink} className="link">
-                  <i className={`${item.icon} link_icon`}></i>
-                  <p className="link_text">{item.text}</p>
-                </NavLink>
-              </li>
-            );
-          })}
-        </StyledLinkList>
-
-        <SocialIcons />
-      </StyledNavLinks>
-    </>
+      <SocialIcons />
+    </StyledNavLinks>
   );
 };
-export default Navlinks;
+export default NavLinks;

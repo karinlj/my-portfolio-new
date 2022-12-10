@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
 import { IWorkingWays } from "../../interfaces";
-import coverImage from "../../images/sunflower_8.jpg";
-import coverImageMobile from "../../images/sunflower_8_mobile.jpg";
+import coverImage from "../../images/sunflower_4.jpg";
+import coverImageMobile from "../../images/sunflower_4_mobile.jpg";
 import styled from "styled-components";
 
 import { StyledImageWrapper } from "./Home";

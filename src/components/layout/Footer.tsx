@@ -6,10 +6,12 @@ import { device } from "../styles/variables";
 const FooterSection = styled.footer.attrs({
   className: "footer_section",
 })`
-  padding: 1rem 3.5rem 1.5rem 1rem;
+  padding: 1rem 1.5rem;
+  min-height: 150px;
+  /* display: flex;
   @media ${device.mobileM} {
-    float: right;
-  }
+    justify-content: flex-end;
+  } */
   p {
     margin-bottom: 0;
     font-size: 0.7rem;
@@ -47,26 +49,32 @@ const Footer = () => {
   return (
     <FooterSection>
       <div className="container">
-        <FooterLogoSection>
-          <p>Powered by</p>
-          <a href="https://reactjs.org/">
-            <img
-              src={react_logo_small}
-              alt="React logo"
-              className="react_logo"
-            />
-          </a>
-          &amp; &nbsp;
-          <a href="https://www.contentful.com/">
-            <img
-              src={contentful_logo_small}
-              alt="Contentful logo"
-              className="contentful_logo"
-            />
-          </a>
-        </FooterLogoSection>
+        <div className="row justify-content-end">
+          <div className="col-12 col-md-4 col-xl-3">
+            <FooterLogoSection>
+              <p>Powered by</p>
+              <a href="https://reactjs.org/">
+                <img
+                  src={react_logo_small}
+                  alt="React logo"
+                  className="react_logo"
+                />
+              </a>
+              &amp; &nbsp;
+              <a href="https://www.contentful.com/">
+                <img
+                  src={contentful_logo_small}
+                  alt="Contentful logo"
+                  className="contentful_logo"
+                />
+              </a>
+            </FooterLogoSection>
 
-        <FooterCopy>© {new Date().getFullYear()}- Karin Ljunggren</FooterCopy>
+            <FooterCopy>
+              © {new Date().getFullYear()}- Karin Ljunggren
+            </FooterCopy>
+          </div>
+        </div>
       </div>
     </FooterSection>
   );
