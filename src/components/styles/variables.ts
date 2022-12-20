@@ -1,5 +1,7 @@
 export const colors = {
+  themecolor: "#404159",
   themeLightHeadingcolor: "#f7f4f1",
+  text_gray: "#737373",
   linkcolor: "#ff66b3",
   background_darkgrey_darker: "#0d0d0d",
 };

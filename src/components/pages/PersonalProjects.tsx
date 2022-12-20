@@ -4,6 +4,7 @@ import { Filter } from "../Filter";
 import HeaderPages from "../layout/HeaderPages";
 import SingleProject from "../SingleProject";
 import { IProject } from "../../interfaces";
+import { ContentLoading } from "../styles/general";
 
 const PersonalProjects = () => {
   const [projects, setProjects] = useState<IProject[] | null>(null);
@@ -69,7 +70,7 @@ const PersonalProjects = () => {
 
             <div className="col-12 col-md-9 col-lg-10">
               <div className="row my-gutters">
-                {loading && <p className="loading">...Loading</p>}
+                {loading && <ContentLoading>...Loading</ContentLoading>}
 
                 {projects &&
                   //if project.techniques includes name from checkedTecniqueNames

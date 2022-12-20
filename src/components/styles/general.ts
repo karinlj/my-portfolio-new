@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors, device, themeSettings } from "./variables";
 
 //typography
-const BaseHeader = styled.span`
+export const BaseHeader = styled.span`
   color: ${colors.themeLightHeadingcolor};
   font-weight: 500;
   position: relative;
@@ -67,6 +67,13 @@ export const StyledH5 = styled(BaseHeader)`
     font-size: 1.2rem;
   }
 `;
+
+//loading
+export const ContentLoading = styled.p`
+  color: ${colors.text_gray};
+`;
+
+//centered text
 export const StyledCenteredText = styled.section.attrs({
   className: "centered_text",
 })`
@@ -108,7 +115,7 @@ export const StyledCenteredText = styled.section.attrs({
     margin-bottom: 2rem;
   }
 `;
-
+//menu
 export const StyledLinkItem = styled.li.attrs({
   className: "link_item",
 })`

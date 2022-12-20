@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
 import { ISkillItem } from "../../interfaces";
+import { ContentLoading } from "../styles/general";
 
 const Skills = () => {
   const [skillItems, setSkillItems] = useState<ISkillItem[] | null>(null);
@@ -39,7 +40,7 @@ const Skills = () => {
           <div className="col-12 col-lg-9 col-xl-10">
             <section className="skills_section">
               <div className="container">
-                {loadingSkills && <p className="loading">...Loading</p>}
+                {loadingSkills && <ContentLoading>...Loading</ContentLoading>}
                 {skillItems &&
                   skillItems.map((entry) => {
                     return (

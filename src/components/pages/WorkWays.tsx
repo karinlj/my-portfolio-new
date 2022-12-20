@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 import { StyledImageWrapper } from "./Home";
 import { StyledCenteredText } from "../styles/general";
-import { StyledH2 } from "../styles/general";
+import { StyledH2, ContentLoading } from "../styles/general";
 
 const StyledSubHeader = styled(StyledH2).attrs({
   className: "styled_sub_header",
@@ -53,7 +53,7 @@ const WorkWays = () => {
               subHeading="I am developing for people and value communication."
             />
 
-            {loadingWorkingWays && <p className="loading">...Loading</p>}
+            {loadingWorkingWays && <ContentLoading>...Loading</ContentLoading>}
             <div className="container">
               <div className="row">
                 {workingWays &&

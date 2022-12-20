@@ -6,7 +6,7 @@ import { client } from "../../client";
 import { IAbout } from "../../interfaces";
 import styled from "styled-components";
 import { device, themeSettings } from "../styles/variables";
-import { StyledH1 } from "../styles/general";
+import { StyledH1, ContentLoading } from "../styles/general";
 
 //with props
 export const StyledImageWrapper = styled.section.attrs(
@@ -118,7 +118,7 @@ const Home = () => {
               mobileImage={coverImageMobile}
             >
               <StyledHeadingSection>
-                {loadingAbout && <p className="loading">...Loading</p>}
+                {loadingAbout && <ContentLoading>...Loading</ContentLoading>}
                 {aboutData ? (
                   <div>
                     <StyledHomeHeading as="h1">
