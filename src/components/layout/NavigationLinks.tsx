@@ -2,12 +2,16 @@ import { NavLink } from "react-router-dom";
 import SocialIcons from "../SocialIcons";
 import styled from "styled-components";
 import { device, colors } from "../styles/variables";
-
 import { StyledLinkItem } from "../styles/general";
 
-// const StyledNavLinkItem = styled(StyledLinkItem)`
-//   width: 50px;
-// `;
+//with props
+const StyledNavLinkItem = styled(StyledLinkItem).attrs(
+  ({ className }): any => ({
+    className: "nav_link_item",
+  })
+)`
+  height: 50px;
+`;
 
 const StyledNavLinks = styled.div.attrs({
   className: "nav_links",
@@ -96,12 +100,12 @@ const NavLinks = ({ clickLink }: IProps) => {
       <StyledLinkList>
         {linkList.map((item, index) => {
           return (
-            <li className="link_item" key={index}>
+            <StyledNavLinkItem key={index}>
               <NavLink to={item.url} onClick={clickLink} className="link">
                 <i className={`${item.icon} link_icon`}></i>
                 <p className="link_text">{item.text}</p>
               </NavLink>
-            </li>
+            </StyledNavLinkItem>
           );
         })}
       </StyledLinkList>

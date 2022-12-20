@@ -1,4 +1,27 @@
 import { StyledSocialLinkList } from "./layout/NavigationLinks";
+import styled from "styled-components";
+import { colors } from "./styles/variables";
+import { StyledLinkItem } from "./styles/general";
+
+//with props
+const StyledNavSocialLinkItem = styled(StyledLinkItem).attrs(
+  ({ className }): any => ({
+    className: "nav_social_link_item",
+  })
+)`
+  margin-bottom: 0.3rem;
+  a.link {
+    color: ${colors.linkcolor};
+    &.active,
+    :visited {
+      color: ${colors.linkcolor};
+    }
+  }
+  i {
+    font-size: 1.1rem;
+    height: 30px;
+  }
+`;
 
 interface IiconListItem {
   url: string;
@@ -33,7 +56,7 @@ const SocialIcons = () => {
     <StyledSocialLinkList>
       {iconList.map((item, index) => {
         return (
-          <li className="social_item" key={index}>
+          <StyledNavSocialLinkItem key={index}>
             <a
               href={item.url}
               target="_top"
@@ -46,7 +69,7 @@ const SocialIcons = () => {
                 {item.text}
               </span>
             </a>
-          </li>
+          </StyledNavSocialLinkItem>
         );
       })}
     </StyledSocialLinkList>

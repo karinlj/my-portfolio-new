@@ -4,6 +4,7 @@ import ToggleBtn from "../../components/ToggleBtn";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { device, colors } from "../styles/variables";
+import { StyledLinkItem } from "../styles/general";
 
 const StyledNavHeader = styled.header.attrs({
   className: "nav_header",
@@ -23,12 +24,22 @@ const StyledNavHeader = styled.header.attrs({
     justify-content: space-between;
   }
 `;
-const StyledHomeLinkWrapper = styled.div.attrs({
-  className: "home_link",
-})`
-  position: relative;
-  width: 50px;
+
+//with props
+const StyledNavHomeLinkItem = styled(StyledLinkItem).attrs(
+  ({ className }): any => ({
+    className: "nav_home_link_item",
+  })
+)`
   height: 50px;
+  color: transparent;
+  a.link {
+    color: ${colors.linkcolor};
+    &.active,
+    :visited {
+      color: ${colors.linkcolor};
+    }
+  }
   .link_icon {
     color: ${colors.linkcolor} !important;
     font-weight: 700;
@@ -98,11 +109,12 @@ const NavBar = () => {
 
   return (
     <StyledNavHeader id="nav">
-      <StyledHomeLinkWrapper>
+      <StyledNavHomeLinkItem>
         <NavLink to="/" onClick={clickLink}>
           <span className="link_icon cursive">K</span>
         </NavLink>
-      </StyledHomeLinkWrapper>
+      </StyledNavHomeLinkItem>
+
       <ToggleBtn toggleMenu={toggleMenu} mobileOpen={mobileOpen} />
 
       <StyledNavbarMobile

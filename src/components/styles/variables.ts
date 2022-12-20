@@ -4,6 +4,7 @@ export const colors = {
   text_gray: "#737373",
   linkcolor: "#ff66b3",
   background_darkgrey_darker: "#0d0d0d",
+  navcolor: "#fff",
 };
 
 const size = {

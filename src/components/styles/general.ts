@@ -116,11 +116,17 @@ export const StyledCenteredText = styled.section.attrs({
   }
 `;
 //menu
+
+// export const StyledLinkItem = styled.li.attrs(({ className }): any => ({
+//   className: "link_item",
+// }))`
+// color: ${(props) => props.linkType};
 export const StyledLinkItem = styled.li.attrs({
   className: "link_item",
 })`
+  position: relative;
   text-align: center;
-  height: 50px;
+  width: 50px;
   a.link {
     width: 50px;
     display: inline-block;
@@ -129,12 +135,12 @@ export const StyledLinkItem = styled.li.attrs({
     padding: 1rem;
     border-bottom: 2px solid transparent;
     letter-spacing: 0.5px;
-    color: $navcolor;
+    color: ${colors.navcolor};
     text-decoration: none;
     cursor: pointer;
     &.active,
     :visited {
-      color: $navcolor;
+      color: ${colors.navcolor};
     }
     &.active {
       filter: drop-shadow(0 0 3px white);
@@ -162,7 +168,7 @@ export const StyledLinkItem = styled.li.attrs({
   }
   i {
     font-size: 1.1rem;
-    @media all and (min-width: $md-min) {
+    @media ${device.mobileM} {
       font-size: 1.3rem;
     }
   }
@@ -175,7 +181,7 @@ export const StyledLinkItem = styled.li.attrs({
     opacity: 0;
     visibility: hidden;
     margin: 0;
-    @media all and (min-width: $md-min) {
+    @media ${device.mobileM} {
       font-size: 0.75rem;
     }
   }
