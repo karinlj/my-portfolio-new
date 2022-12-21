@@ -3,7 +3,53 @@ import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
 import { ISkillItem } from "../../interfaces";
 import { ContentLoading } from "../styles/general";
+import { StyledH2 } from "../styles/general";
+import styled from "styled-components";
+import { device, colors } from "../styles/variables";
 
+const StyledSkillsSection = styled.section.attrs({
+  className: "styled_skills_section",
+})`
+  @media ${device.mobileM} {
+    margin-top: 2rem;
+  }
+  .skills_row {
+    margin-bottom: 2rem;
+    @media ${device.laptop} {
+      margin-bottom: 1rem;
+    }
+    @media ${device.desktop} {
+      margin-bottom: 4rem;
+    }
+  }
+`;
+
+const StyledSubHeader = styled(StyledH2)`
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+`;
+
+const StyledBoxItem = styled.div.attrs({
+  className: "styled_box_item",
+})`
+  margin-bottom: 2rem;
+  @media ${device.mobileM} {
+    margin-bottom: 1.5rem;
+  }
+  .box_item_icon_content {
+    text-align: center;
+    width: 50%;
+  }
+  .icon {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    color: ${colors.themeLightHeadingcolor};
+  }
+  .text {
+    font-size: 0.75rem;
+  }
+`;
 const Skills = () => {
   const [skillItems, setSkillItems] = useState<ISkillItem[] | null>(null);
   const [loadingSkills, setLoadingskills] = useState(false);
@@ -31,37 +77,37 @@ const Skills = () => {
   }, []);
 
   return (
-    <main className="skills">
+    <main>
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-3 col-xl-2">
             <HeaderPages heading="My skills" />
           </div>
           <div className="col-12 col-lg-9 col-xl-10">
-            <section className="skills_section">
+            <StyledSkillsSection>
               <div className="container">
                 {loadingSkills && <ContentLoading>...Loading</ContentLoading>}
                 {skillItems &&
                   skillItems.map((entry) => {
                     return (
                       <div className="skills_row">
-                        <h2 className="skills_heading">
+                        <StyledSubHeader as="h2">
                           {" "}
                           {entry.fields.title}
-                        </h2>
+                        </StyledSubHeader>
                         <div className="row box_row" key={entry.sys.id}>
                           {entry.fields.skills.map((item) => {
                             return (
                               <div className="col-4 col-lg-2">
-                                <div className="boxes_icon">
-                                  <div className="boxes_icon_content">
+                                <StyledBoxItem>
+                                  <div className="box_item_icon_content">
                                     <i
                                       className={`fa-${item.icon} icon`}
                                       aria-hidden="true"
                                     ></i>
                                     <p className="text">{item.text}</p>
                                   </div>
-                                </div>
+                                </StyledBoxItem>
                               </div>
                             );
                           })}
@@ -70,7 +116,7 @@ const Skills = () => {
                     );
                   })}
               </div>
-            </section>
+            </StyledSkillsSection>
           </div>
         </div>
       </div>

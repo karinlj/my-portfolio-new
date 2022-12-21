@@ -5,12 +5,7 @@ const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
 }
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+
 html {
   height: 100%;
 }
@@ -24,8 +19,34 @@ body {
 body.no_scroll {
   overflow: hidden;
 }
+@keyframes transitionIn {
+  0% {
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
 main {
   animation: transitionIn 1.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.my-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 .site_content {
   padding: 3.5rem 1rem;

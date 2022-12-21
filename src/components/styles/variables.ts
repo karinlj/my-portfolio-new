@@ -2,10 +2,12 @@ export const colors = {
   themecolor: "#404159",
   themeLightHeadingcolor: "#f7f4f1",
   text_gray: "#737373",
+  lightgray: "#eee",
   linkcolor: "#ff66b3",
   background_darkgrey: "#1a1a1a",
   background_darkgrey_darker: "#0d0d0d",
   navcolor: "#fff",
+  bluecolor: "#2e9ce6",
 };
 
 const size = {
