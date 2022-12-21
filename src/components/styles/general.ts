@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, device, themeSettings } from "./variables";
+import { colors, device } from "./variables";
 
 //typography
 export const BaseHeader = styled.span`

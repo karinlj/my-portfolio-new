@@ -3,6 +3,7 @@ export const colors = {
   themeLightHeadingcolor: "#f7f4f1",
   text_gray: "#737373",
   linkcolor: "#ff66b3",
+  background_darkgrey: "#1a1a1a",
   background_darkgrey_darker: "#0d0d0d",
   navcolor: "#fff",
 };

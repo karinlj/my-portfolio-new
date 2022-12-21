@@ -8,11 +8,13 @@ import WorkWays from "./components/pages/WorkWays";
 import Curriculum from "./components/pages/Curriculum";
 import NavBar from "./components/layout/NavBar";
 import Footer from "./components/layout/Footer";
+import GlobalStyle from "./components/styles/globalStyles";
 
 function App() {
   return (
     // <div className="app" style={{ height: "100%" }}>
     <BrowserRouter>
+      <GlobalStyle />
       <NavBar />
       <div className="site_content">
         <Routes>
