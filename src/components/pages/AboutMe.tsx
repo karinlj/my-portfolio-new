@@ -7,7 +7,7 @@ import { IAbout } from "../../interfaces";
 import coverImage from "../../images/sunflower_8.jpg";
 import coverImageMobile from "../../images/sunflower_8_mobile.jpg";
 import { StyledImageWrapper } from "./Home";
-import { StyledCenteredText, ContentLoading } from "../styles/general";
+import { StyledCenteredText, StyledContentLoading } from "../styles/general";
 
 const AboutMe = () => {
   const [aboutData, setAboutData] = useState<IAbout | null>(null);
@@ -39,7 +39,9 @@ const AboutMe = () => {
         <StyledImageWrapper image={coverImage} mobileImage={coverImageMobile}>
           <StyledCenteredText>
             <HeaderPages heading="About Me" />
-            {loadingAbout && <ContentLoading>...Loading</ContentLoading>}
+            {loadingAbout && (
+              <StyledContentLoading>...Loading</StyledContentLoading>
+            )}
 
             <div className="container">
               {aboutData

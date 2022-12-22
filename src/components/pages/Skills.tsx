@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
 import { ISkillItem } from "../../interfaces";
-import { ContentLoading } from "../styles/general";
+import { StyledContentLoading } from "../styles/general";
 import { StyledH2 } from "../styles/general";
 import styled from "styled-components";
 import { device, colors } from "../styles/variables";
@@ -86,7 +86,9 @@ const Skills = () => {
           <div className="col-12 col-lg-9 col-xl-10">
             <StyledSkillsSection>
               <div className="container">
-                {loadingSkills && <ContentLoading>...Loading</ContentLoading>}
+                {loadingSkills && (
+                  <StyledContentLoading>...Loading</StyledContentLoading>
+                )}
                 {skillItems &&
                   skillItems.map((entry) => {
                     return (

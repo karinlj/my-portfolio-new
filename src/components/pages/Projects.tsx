@@ -4,7 +4,7 @@ import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
 import SingleProject from "../SingleProject";
 import { IProject } from "../../interfaces";
-import { ContentLoading } from "../styles/general";
+import { StyledContentLoading, StyledProjects } from "../styles/general";
 
 const Projects = () => {
   const [projects, setProjects] = useState<IProject[] | null>(null);
@@ -55,10 +55,9 @@ const Projects = () => {
   }, []);
 
   return (
-    <main className="">
+    <main>
       <HeaderPages heading="Client Projects" subHeading="My Client Projects." />
-
-      <section className="projects">
+      <StyledProjects>
         <div className="container">
           <div className="row my-gutters">
             <div className="col-12 col-md-3 col-lg-2">
@@ -67,7 +66,9 @@ const Projects = () => {
 
             <div className="col-12 col-md-9 col-lg-10">
               <div className="row my-gutters">
-                {loading && <ContentLoading>...Loading</ContentLoading>}
+                {loading && (
+                  <StyledContentLoading>...Loading</StyledContentLoading>
+                )}
                 {projects &&
                   //if project.techniques includes name from checkedTecniqueNames
                   projects.map((project) => {
@@ -85,7 +86,7 @@ const Projects = () => {
             </div>
           </div>
         </div>
-      </section>
+      </StyledProjects>
     </main>
   );
 };

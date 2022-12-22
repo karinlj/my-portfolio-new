@@ -4,7 +4,7 @@ import { Filter } from "../Filter";
 import HeaderPages from "../layout/HeaderPages";
 import SingleProject from "../SingleProject";
 import { IProject } from "../../interfaces";
-import { ContentLoading } from "../styles/general";
+import { StyledContentLoading, StyledProjects } from "../styles/general";
 
 const PersonalProjects = () => {
   const [projects, setProjects] = useState<IProject[] | null>(null);
@@ -56,12 +56,12 @@ const PersonalProjects = () => {
   }, []);
 
   return (
-    <main className="">
+    <main>
       <HeaderPages
         heading="Personal Projects"
         subHeading="Recent projects to explore various tecniques."
       />
-      <section className="projects">
+      <StyledProjects>
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-3 col-lg-2">
@@ -70,7 +70,9 @@ const PersonalProjects = () => {
 
             <div className="col-12 col-md-9 col-lg-10">
               <div className="row my-gutters">
-                {loading && <ContentLoading>...Loading</ContentLoading>}
+                {loading && (
+                  <StyledContentLoading>...Loading</StyledContentLoading>
+                )}
 
                 {projects &&
                   //if project.techniques includes name from checkedTecniqueNames
@@ -90,7 +92,7 @@ const PersonalProjects = () => {
             </div>
           </div>
         </div>
-      </section>
+      </StyledProjects>
     </main>
   );
 };

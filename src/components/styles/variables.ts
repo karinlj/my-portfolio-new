@@ -1,7 +1,9 @@
 export const colors = {
   themecolor: "#404159",
   themeLightHeadingcolor: "#f7f4f1",
+  themeHeadingcolor_dark: " rgba(43, 44, 59, 0.9)",
   text_gray: "#737373",
+  text_color_dark: "#212529",
   lightgray: "#eee",
   linkcolor: "#ff66b3",
   background_darkgrey: "#1a1a1a",

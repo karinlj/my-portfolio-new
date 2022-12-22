@@ -4,7 +4,7 @@ import { client } from "../../client";
 import CurriculumSection from "../CurriculumSection";
 import { ICurriculumItem } from "../../interfaces";
 import { Link } from "react-router-dom";
-import { ContentLoading } from "../styles/general";
+import { StyledContentLoading } from "../styles/general";
 
 const Curriculum = () => {
   const [workItems, setWorkItems] = useState<ICurriculumItem[] | null>(null);
@@ -58,7 +58,7 @@ const Curriculum = () => {
                 <h2>Work Experience</h2>
                 <section className="curriculum_items">
                   {loadingWorkItems && (
-                    <ContentLoading>...Loading</ContentLoading>
+                    <StyledContentLoading>...Loading</StyledContentLoading>
                   )}
                   {workItems &&
                     workItems.map((entry) => {
@@ -79,7 +79,7 @@ const Curriculum = () => {
 
                 <section className="curriculum_items">
                   {loadingSchoolItems && (
-                    <ContentLoading>...Loading</ContentLoading>
+                    <StyledContentLoading>...Loading</StyledContentLoading>
                   )}
                   {schoolItems &&
                     schoolItems.map((entry) => {

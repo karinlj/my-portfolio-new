@@ -69,7 +69,7 @@ export const StyledH5 = styled(BaseHeader)`
 `;
 
 //loading
-export const ContentLoading = styled.p`
+export const StyledContentLoading = styled.p`
   color: ${colors.text_gray};
 `;
 
@@ -115,12 +115,8 @@ export const StyledCenteredText = styled.section.attrs({
     margin-bottom: 2rem;
   }
 `;
-//menu
 
-// export const StyledLinkItem = styled.li.attrs(({ className }): any => ({
-//   className: "link_item",
-// }))`
-// color: ${(props) => props.linkType};
+//menu
 export const StyledLinkItem = styled.li.attrs({
   className: "link_item",
 })`
@@ -184,5 +180,14 @@ export const StyledLinkItem = styled.li.attrs({
     @media ${device.mobileM} {
       font-size: 0.75rem;
     }
+  }
+`;
+//projects
+export const StyledProjects = styled.section`
+  min-height: 500px;
+  .col-12,
+  .col-md-6,
+  .col-lg-4 {
+    margin-bottom: 2rem;
   }
 `;
