@@ -58,7 +58,7 @@ const StyledFilterOptions = styled.section.attrs({
       &:focus {
         ~ .checkmark {
           padding: 0.5rem;
-          outline: solid 2px ${colors.themecolor};
+          outline: solid 2px ${colors.textcolor};
           outline-offset: 5px;
           border-radius: 1px;
         }

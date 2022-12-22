@@ -1,20 +1,20 @@
 import { createGlobalStyle } from "styled-components";
-import { colors, device } from "./variables";
+import { device } from "./variables";
 
 const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
 }
-
 html {
   height: 100%;
 }
 body {
+  position: relative;
   font-family: 'Roboto', 'Helvetica', sans-serif;
   font-size: 0.9rem;
-  color: ${colors.themeLightHeadingcolor};
-  background: ${colors.background_darkgrey};
-  position: relative;
+  background: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
+  //transition: all 0.50s linear;
 }
 body.no_scroll {
   overflow: hidden;

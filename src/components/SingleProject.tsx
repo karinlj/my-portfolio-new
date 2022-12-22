@@ -17,6 +17,9 @@ const StyledProject = styled.article.attrs({
   @media ${device.mobileM} {
     height: 28rem;
   }
+  @media ${device.desktopL} {
+    height: 30rem;
+  }
   &:hover {
     div,
     h3,
@@ -39,7 +42,7 @@ const StyledProjectLink = styled.a.attrs({
   color: transparent;
   text-decoration: none;
   &:focus {
-    outline: solid 2px $themecolor;
+    outline: solid 2px $textcolor;
     outline-offset: 5px;
     border-radius: 1px;
   }

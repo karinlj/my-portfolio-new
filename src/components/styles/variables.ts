@@ -1,14 +1,29 @@
+import { DefaultTheme } from "styled-components";
+
+export const greenTheme: DefaultTheme = {
+  background: "#161d16",
+  background_darker: "#0b0f0b",
+  btn_background: "#808080",
+  text: "#f7f4f1",
+};
+export const grayTheme: DefaultTheme = {
+  background: "#1a1a1a",
+  background_darker: "#0d0d0d",
+  btn_background: "#46a046",
+  text: "#f7f4f1",
+};
+
 export const colors = {
-  themecolor: "#404159",
+  background_darkgrey: "#1a1a1a",
+  background_darkgrey_darker: "#0d0d0d",
+  textcolor: "#404159",
   themeLightHeadingcolor: "#f7f4f1",
-  themeHeadingcolor_dark: " rgba(43, 44, 59, 0.9)",
+  themeHeadingcolor_dark: "rgba(43, 44, 59, 0.9)",
   text_gray: "#737373",
   text_color_dark: "#212529",
   lightgray: "#eee",
-  linkcolor: "#ff66b3",
-  background_darkgrey: "#1a1a1a",
-  background_darkgrey_darker: "#0d0d0d",
   navcolor: "#fff",
+  linkcolor: "#ff66b3",
   bluecolor: "#2e9ce6",
 };
 

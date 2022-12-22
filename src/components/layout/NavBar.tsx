@@ -10,7 +10,10 @@ const StyledNavHeader = styled.header.attrs({
   className: "nav_header",
 })`
   padding: 1rem 1rem;
-  background: ${colors.background_darkgrey_darker};
+  //background: ${colors.background_darkgrey_darker};
+
+  background: ${({ theme }) => theme.background_darker};
+
   height: 4rem;
   @media ${device.mobileM} {
     display: block;
