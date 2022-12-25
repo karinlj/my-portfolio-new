@@ -5,6 +5,40 @@ import CurriculumSection from "../CurriculumSection";
 import { ICurriculumItem } from "../../interfaces";
 import { Link } from "react-router-dom";
 import { StyledContentLoading } from "../styles/general";
+import styled from "styled-components";
+import { colors, device } from "../styles/variables";
+import { StyledH2 } from "../styles/general";
+
+const StyledBgWrapper = styled.section.attrs({
+  className: "styled_bg_wrapper",
+})`
+  position: relative;
+  padding: 3rem 1rem;
+  background: $background_light;
+  border-radius: $themeBorder_radius;
+  height: 100%;
+  @media all and (min-width: $sm-min) {
+    padding: 3rem 2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+`;
+
+const StyledTitle = styled(StyledH2)`
+  font-size: 1.3rem;
+  @media ${device.mobileM} {
+    font-size: 1.6rem;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  color: ${colors.linkcolor};
+  transition: all 1s ease;
+  &:hover {
+    filter: drop-shadow(0 0 3px white);
+  }
+`;
 
 const Curriculum = () => {
   const [workItems, setWorkItems] = useState<ICurriculumItem[] | null>(null);
@@ -53,10 +87,10 @@ const Curriculum = () => {
         <div className="row">
           <div className="col-12 col-lg-6">
             {/* Work Experience */}
-            <div className="bg_wrapper">
-              <div className="wrapper">
-                <h2>Work Experience</h2>
-                <section className="curriculum_items">
+            <StyledBgWrapper>
+              <div>
+                <StyledTitle as="h2">Work Experience</StyledTitle>
+                <section>
                   {loadingWorkItems && (
                     <StyledContentLoading>...Loading</StyledContentLoading>
                   )}
@@ -68,16 +102,15 @@ const Curriculum = () => {
                     })}
                 </section>
               </div>
-            </div>
+            </StyledBgWrapper>
           </div>
 
           <div className="col-12 col-lg-6">
             {/* education */}
-            <div className="bg_wrapper">
-              <div className="wrapper">
-                <h2>Education</h2>
-
-                <section className="curriculum_items">
+            <StyledBgWrapper>
+              <div>
+                <StyledTitle as="h2">Education</StyledTitle>
+                <section>
                   {loadingSchoolItems && (
                     <StyledContentLoading>...Loading</StyledContentLoading>
                   )}
@@ -89,18 +122,13 @@ const Curriculum = () => {
                     })}
                 </section>
               </div>
-            </div>
+            </StyledBgWrapper>
           </div>
         </div>
 
-        <Link
-          to="/curriculum_dev.pdf"
-          className="cv_link"
-          target="_blank"
-          download
-        >
+        <StyledLink to="/curriculum_dev.pdf" target="_blank" download>
           Download Curriculum.pdf
-        </Link>
+        </StyledLink>
       </div>
     </main>
   );

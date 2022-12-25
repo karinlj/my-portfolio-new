@@ -47,6 +47,7 @@ const StyledHeadingSection = styled.section.attrs({
   display: flex;
   justify-content: center;
   padding: 2rem;
+  position: relative;
 `;
 
 const StyledHomeHeading = styled(StyledH1).attrs({

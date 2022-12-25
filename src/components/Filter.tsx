@@ -58,7 +58,7 @@ const StyledFilterOptions = styled.section.attrs({
       &:focus {
         ~ .checkmark {
           padding: 0.5rem;
-          outline: solid 2px ${colors.textcolor};
+          outline: solid 2px ${colors.textcolor_dark};
           outline-offset: 5px;
           border-radius: 1px;
         }
@@ -103,8 +103,7 @@ const StyledFilterOptions = styled.section.attrs({
     &:hover {
       input {
         ~ .checkmark {
-          filter: brightness(80%);
-          -webkit-filter: brightness(80%);
+          filter: drop-shadow(0 0 3px white);
           transition: all 1s ease;
         }
       }

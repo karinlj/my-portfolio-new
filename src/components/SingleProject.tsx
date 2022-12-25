@@ -7,8 +7,8 @@ const StyledProject = styled.article.attrs({
   className: "styled_project",
 })`
   transition: all 0.25s ease-out;
-  color: ${colors.text_color_dark};
-  background: ${colors.themeLightHeadingcolor};
+  color: ${colors.textcolor_dark};
+  background: ${colors.textcolor_light};
   height: auto;
   position: relative;
   margin-bottom: 4rem;
@@ -18,7 +18,7 @@ const StyledProject = styled.article.attrs({
     height: 28rem;
   }
   @media ${device.desktopL} {
-    height: 30rem;
+    height: 31rem;
   }
   &:hover {
     div,
@@ -26,6 +26,9 @@ const StyledProject = styled.article.attrs({
     p {
       color: ${colors.linkcolor};
       transition: 0.25s ease-in-out;
+    }
+    a {
+      color: transparent;
     }
   }
 `;
@@ -42,7 +45,7 @@ const StyledProjectLink = styled.a.attrs({
   color: transparent;
   text-decoration: none;
   &:focus {
-    outline: solid 2px $textcolor;
+    outline: solid 2px $textcolor_dark;
     outline-offset: 5px;
     border-radius: 1px;
   }
@@ -76,7 +79,7 @@ const StyledContentContainer = styled.section.attrs({
 const StyledTitle = styled(StyledH3)`
   margin: 0 0 0.5rem 0;
   font-size: 0.95rem;
-  color: ${colors.themeHeadingcolor_dark};
+  color: ${colors.textcolor_dark};
   font-weight: 600;
 `;
 

@@ -14,14 +14,14 @@ $themeBorder_radius: 8px;
 $themeBox_shadow: 0 7px 34px 0 rgba(0, 0, 0, 0.07),
   0 11px 34px 0 rgba(0, 0, 0, 0.04);
 //klar
-$textcolor: #404159;
+$textcolor_dark: #404159;
 
-$theme_text_color_dark: #212529;
-$themeHeadingcolor_dark: rgba(43, 44, 59, 0.9);
+$theme_textcolor_dark: #212529;
+$textcolor_dark: rgba(43, 44, 59, 0.9);
 
 //klar
-$themeLightHeadingcolor: #f7f4f1; //e6efdc; //  #d1fae5; //cfdac8
-$themeHeadingcolor: $themeLightHeadingcolor;
+$textcolor_light: #f7f4f1; //e6efdc; //  #d1fae5; //cfdac8
+$themeHeadingcolor: $textcolor_light;
 
 //klar
 $background_darkgrey: #1a1a1a;
@@ -29,7 +29,7 @@ $background_darkgrey_darker: #0d0d0d;
 
 $background_darkgrey_lighter: #262626;
 
-$background_light: $themeLightHeadingcolor;
+$background_light: $textcolor_light;
 
 //klar
 $linkcolor: #ff66b3;

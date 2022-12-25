@@ -44,7 +44,7 @@ const StyledBoxItem = styled.div.attrs({
   .icon {
     margin-bottom: 0.5rem;
     font-size: 2.5rem;
-    color: ${colors.themeLightHeadingcolor};
+    //color: ${colors.textcolor_light};
   }
   .text {
     font-size: 0.75rem;

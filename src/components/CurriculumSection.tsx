@@ -1,7 +1,58 @@
-import React from "react";
 import Accordion from "./Accordion";
 import { ICurriculumItem } from "../interfaces";
 import { StyledH3 } from "./styles/general";
+import styled from "styled-components";
+import { colors, device } from "./styles/variables";
+
+const StyledCurriculumItem = styled.article.attrs({
+  className: "curriculum_item",
+})`
+  position: relative;
+  width: 100%;
+  padding: 0.5rem 0;
+  a {
+    cursor: pointer;
+    color: ${colors.textcolor_dark};
+
+    &:hover {
+      transition: all 1s ease;
+      text-decoration: none;
+      color: ${colors.linkcolor};
+    }
+  }
+  .date {
+    display: block;
+    padding: 0.2rem 0 0.5rem 0;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+`;
+
+const StyledTitle = styled(StyledH3)`
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  margin-bottom: 0rem;
+  color: ${colors.textcolor_dark};
+`;
+
+const StyledSiteItem = styled.div.attrs({
+  className: "styled_site_item",
+})`
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  a {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    color: ${colors.linkcolor};
+    &:hover {
+      color: ${colors.linkcolor};
+      transition: all 0.5s ease;
+      text-decoration: none;
+    }
+  }
+`;
 
 interface IProps {
   entry: ICurriculumItem;
@@ -11,8 +62,8 @@ function CurriculumSection({ entry }: IProps) {
     entry.fields;
 
   return (
-    <article className="curriculum_item">
-      <StyledH3 as="h3">
+    <StyledCurriculumItem>
+      <StyledTitle as="h3">
         <a
           href={titleLink}
           target="_blank"
@@ -22,13 +73,13 @@ function CurriculumSection({ entry }: IProps) {
           {title}
           {""}
         </a>
-      </StyledH3>
+      </StyledTitle>
       <p className="date">{date} </p>
       <p className="description">{description}</p>
       {siteList &&
         siteList.map((site, index) => {
           return (
-            <div className="site" key={index}>
+            <StyledSiteItem key={index}>
               <a
                 href={site}
                 target="_blank"
@@ -38,7 +89,7 @@ function CurriculumSection({ entry }: IProps) {
                 {site}
                 {""}
               </a>
-            </div>
+            </StyledSiteItem>
           );
         })}
 
@@ -46,12 +97,16 @@ function CurriculumSection({ entry }: IProps) {
       {subItemList &&
         subItemList.map((item, i) => {
           return (
-            <section className="course_items" key={i}>
-              <Accordion heading={item.heading} content={item.content} />
-            </section>
+            <>
+              <Accordion
+                key={i}
+                heading={item.heading}
+                content={item.content}
+              />
+            </>
           );
         })}
-    </article>
+    </StyledCurriculumItem>
   );
 }
 

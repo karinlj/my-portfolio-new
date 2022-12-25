@@ -14,21 +14,28 @@ import { ThemeProvider } from "styled-components";
 import { greenTheme, grayTheme } from "./components/styles/variables";
 import styled from "styled-components";
 
-export const StyledToggleBtn = styled.button`
+export const StyledToggleBtn = styled.button.attrs({
+  className: "toggle_btn",
+})`
   border: none;
   background: transparent;
   color: ${({ theme }) => theme.btn_background};
+  position: relative;
   position: absolute;
   top: 1.1rem;
   right: 1.1rem;
+  display: block;
+  &:hover {
+    filter: drop-shadow(0 0 3px white);
+  }
   i {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    position: relative;
   }
 `;
 
 function App() {
   const [isGrayMode, setGrayMode] = useState(true);
-
   const themeToggler = () => {
     setGrayMode(!isGrayMode);
   };
@@ -37,9 +44,9 @@ function App() {
       <ThemeProvider theme={isGrayMode ? grayTheme : greenTheme}>
         <StyledToggleBtn onClick={themeToggler}>
           {isGrayMode ? (
-            <i className="fa-solid fa-droplet" title="Green"></i>
+            <i className="fa-solid fa-droplet" title="Green Mode?"></i>
           ) : (
-            <i className="fa-solid fa-droplet" title="Gray"></i>
+            <i className="fa-solid fa-droplet" title="Gray Mode?"></i>
           )}
         </StyledToggleBtn>
         <GlobalStyle />

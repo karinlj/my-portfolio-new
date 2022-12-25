@@ -3,7 +3,7 @@ import { colors, device } from "./variables";
 
 //typography
 export const BaseHeader = styled.span`
-  color: ${colors.themeLightHeadingcolor};
+  color: ${colors.textcolor_light};
   font-weight: 500;
   position: relative;
   line-height: 1.2;
@@ -94,14 +94,14 @@ export const StyledCenteredText = styled.section.attrs({
   }
   h1,
   h2 {
-    color: ${colors.themeLightHeadingcolor};
+    color: ${colors.textcolor_light};
     position: relative;
   }
   p,
   li {
     line-height: 2;
     position: relative;
-    color: ${colors.themeLightHeadingcolor};
+    color: ${colors.textcolor_light};
   }
   a {
     color: ${colors.linkcolor};
