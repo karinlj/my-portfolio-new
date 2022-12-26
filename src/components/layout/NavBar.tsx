@@ -10,10 +10,7 @@ const StyledNavHeader = styled.header.attrs({
   className: "nav_header",
 })`
   padding: 1rem 1rem;
-  //background: ${colors.background_darkgrey_darker};
-
   background: ${({ theme }) => theme.background_darker};
-
   height: 4rem;
   @media ${device.mobileM} {
     display: block;
@@ -48,6 +45,10 @@ const StyledNavHomeLinkItem = styled(StyledLinkItem).attrs(
     font-weight: 700;
     font-size: 2.8rem;
     line-height: 1;
+    width: 25px;
+    @media ${device.mobileM} {
+      width: 50px;
+    }
   }
   p.link_text {
     top: 15px !important;

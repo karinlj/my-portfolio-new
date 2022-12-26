@@ -11,7 +11,7 @@ import Footer from "./components/layout/Footer";
 import GlobalStyle from "./components/styles/globalStyles";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { greenTheme, grayTheme } from "./components/styles/variables";
+import { device, greenTheme, grayTheme } from "./components/styles/variables";
 import styled from "styled-components";
 
 export const StyledToggleBtn = styled.button.attrs({
@@ -22,15 +22,21 @@ export const StyledToggleBtn = styled.button.attrs({
   color: ${({ theme }) => theme.btn_background};
   position: relative;
   position: absolute;
-  top: 1.1rem;
+  top: 4.7rem;
   right: 1.1rem;
   display: block;
+  @media ${device.mobileM} {
+    top: 1.1rem;
+  }
   &:hover {
     filter: drop-shadow(0 0 3px white);
   }
   i {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     position: relative;
+    @media ${device.laptop} {
+      font-size: 1.4rem;
+    }
   }
 `;
 
@@ -44,9 +50,9 @@ function App() {
       <ThemeProvider theme={isGrayMode ? grayTheme : greenTheme}>
         <StyledToggleBtn onClick={themeToggler}>
           {isGrayMode ? (
-            <i className="fa-solid fa-droplet" title="Green Mode?"></i>
+            <i className="fa-solid fa-paintbrush" title="Green Mode?"></i>
           ) : (
-            <i className="fa-solid fa-droplet" title="Gray Mode?"></i>
+            <i className="fa-solid fa-paintbrush" title="Gray Mode?"></i>
           )}
         </StyledToggleBtn>
         <GlobalStyle />

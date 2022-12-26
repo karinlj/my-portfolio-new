@@ -6,7 +6,7 @@ import { ICurriculumItem } from "../../interfaces";
 import { Link } from "react-router-dom";
 import { StyledContentLoading } from "../styles/general";
 import styled from "styled-components";
-import { colors, device } from "../styles/variables";
+import { colors, device, themeSettings } from "../styles/variables";
 import { StyledH2 } from "../styles/general";
 
 const StyledBgWrapper = styled.section.attrs({
@@ -14,19 +14,17 @@ const StyledBgWrapper = styled.section.attrs({
 })`
   position: relative;
   padding: 3rem 1rem;
-  background: $background_light;
-  border-radius: $themeBorder_radius;
+  background: ${colors.background_light};
+  border-radius: ${themeSettings.themeBorder_radius};
   height: 100%;
-  @media all and (min-width: $sm-min) {
+  @media ${device.mobileS} {
     padding: 3rem 2rem;
-  }
-  p {
-    font-size: 0.9rem;
   }
 `;
 
 const StyledTitle = styled(StyledH2)`
   font-size: 1.3rem;
+  color: ${colors.textcolor_dark};
   @media ${device.mobileM} {
     font-size: 1.6rem;
   }
@@ -85,7 +83,7 @@ const Curriculum = () => {
       <HeaderPages heading="Curriculum" />
       <div className="container">
         <div className="row">
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-6" style={{ marginBottom: "2rem" }}>
             {/* Work Experience */}
             <StyledBgWrapper>
               <div>
@@ -105,7 +103,7 @@ const Curriculum = () => {
             </StyledBgWrapper>
           </div>
 
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-6" style={{ marginBottom: "2rem" }}>
             {/* education */}
             <StyledBgWrapper>
               <div>

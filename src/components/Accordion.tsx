@@ -61,6 +61,7 @@ const StyledHeading = styled(StyledH4)`
   font-size: 0.8rem;
   font-weight: 500;
   margin-bottom: 0;
+  color: ${colors.textcolor_dark};
   @media ${device.mobileM} {
     font-size: 0.9rem;
   }

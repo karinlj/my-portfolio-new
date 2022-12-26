@@ -4,6 +4,7 @@ export const colors = {
   //bg
   background_darkgrey: "#1a1a1a",
   background_darkgrey_darker: "#0d0d0d",
+  background_light: "#f7f4f1",
   //text
   textcolor_light: "#f7f4f1",
   textcolor_dark: "#404159",

@@ -150,10 +150,13 @@ li.social_item {
   h5,
   h6,
   p {
-    color: $textcolor_dark;
+    //color: $textcolor_dark;
   }
+  // p {
+  //   color: $textcolor_dark;
+  // }
   h1 {
-    color: $textcolor_light;
+    //color: $textcolor_light;
   }
   // h2 {
   //   font-size: 1.3rem;
@@ -162,15 +165,15 @@ li.social_item {
   //   }
   // }
   .col-12 {
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
   }
-  .cv_link {
-    color: $linkcolor;
-    transition: all 1s ease;
-    &:hover {
-      filter: drop-shadow(0 0 3px white);
-    }
-  }
+  // .cv_link {
+  //   color: $linkcolor;
+  //   transition: all 1s ease;
+  //   &:hover {
+  //     filter: drop-shadow(0 0 3px white);
+  //   }
+  // }
   .bg_wrapper {
     position: relative;
     padding: 3rem 1rem;

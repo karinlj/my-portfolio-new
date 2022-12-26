@@ -10,6 +10,10 @@ const StyledCurriculumItem = styled.article.attrs({
   position: relative;
   width: 100%;
   padding: 0.5rem 0;
+  color: ${colors.textcolor_dark};
+  p {
+    color: ${colors.textcolor_dark};
+  }
   a {
     cursor: pointer;
     color: ${colors.textcolor_dark};
@@ -25,6 +29,9 @@ const StyledCurriculumItem = styled.article.attrs({
     padding: 0.2rem 0 0.5rem 0;
     margin: 0;
     font-size: 0.8rem;
+  }
+  .description {
+    font-size: 0.9rem;
   }
 `;
 

@@ -8,15 +8,21 @@ const FooterSection = styled.footer.attrs({
 })`
   padding: 1rem 1.5rem;
   min-height: 150px;
-  /* display: flex;
   @media ${device.mobileM} {
-    justify-content: flex-end;
-  } */
+    margin-left: 5rem;
+  }
   p {
     margin-bottom: 0;
     font-size: 0.7rem;
   }
 `;
+
+const FooterLogoWrapper = styled.section.attrs({
+  className: "footer_logo_wrapper",
+})`
+  float: right;
+`;
+
 const FooterLogoSection = styled.section.attrs({
   className: "footer_logo_section",
 })`
@@ -50,29 +56,31 @@ const Footer = () => {
     <FooterSection>
       <div className="container">
         <div className="row justify-content-end">
-          <div className="col-12 col-md-4 col-xl-3">
-            <FooterLogoSection>
-              <p>Powered by</p>
-              <a href="https://reactjs.org/">
-                <img
-                  src={react_logo_small}
-                  alt="React logo"
-                  className="react_logo"
-                />
-              </a>
-              &amp; &nbsp;
-              <a href="https://www.contentful.com/">
-                <img
-                  src={contentful_logo_small}
-                  alt="Contentful logo"
-                  className="contentful_logo"
-                />
-              </a>
-            </FooterLogoSection>
+          <div className="col-12 col-md-4 col-xl-3" style={{ clear: "both" }}>
+            <FooterLogoWrapper>
+              <FooterLogoSection>
+                <p>Powered by</p>
+                <a href="https://reactjs.org/">
+                  <img
+                    src={react_logo_small}
+                    alt="React logo"
+                    className="react_logo"
+                  />
+                </a>
+                &amp; &nbsp;
+                <a href="https://www.contentful.com/">
+                  <img
+                    src={contentful_logo_small}
+                    alt="Contentful logo"
+                    className="contentful_logo"
+                  />
+                </a>
+              </FooterLogoSection>
 
-            <FooterCopy>
-              © {new Date().getFullYear()}- Karin Ljunggren
-            </FooterCopy>
+              <FooterCopy>
+                © {new Date().getFullYear()}- Karin Ljunggren
+              </FooterCopy>
+            </FooterLogoWrapper>
           </div>
         </div>
       </div>
