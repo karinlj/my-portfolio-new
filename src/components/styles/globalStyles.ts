@@ -14,7 +14,7 @@ body {
   font-size: 0.9rem;
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
-  //transition: all 0.50s linear;
+  transition: all 0.2s linear;
 }
 body.no_scroll {
   overflow: hidden;

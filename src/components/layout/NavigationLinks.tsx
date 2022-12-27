@@ -22,7 +22,8 @@ const StyledNavLinks = styled.div.attrs({
   background: ${({ theme }) => theme.background_darker};
   height: auto;
   padding: 2rem 0;
-  border-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
   @media ${device.mobileM} {
     height: 1000%;
     padding: 1rem 0 0 0;

@@ -12,12 +12,11 @@ const StyledCurriculumItem = styled.article.attrs({
   padding: 0.5rem 0;
   color: ${colors.textcolor_dark};
   p {
-    color: ${colors.textcolor_dark};
+    color: ${({ theme }) => theme.text_inverse};
   }
   a {
     cursor: pointer;
-    color: ${colors.textcolor_dark};
-
+    color: ${({ theme }) => theme.text_inverse};
     &:hover {
       transition: all 1s ease;
       text-decoration: none;
@@ -39,7 +38,7 @@ const StyledTitle = styled(StyledH3)`
   font-size: 1rem;
   letter-spacing: 0.8px;
   margin-bottom: 0rem;
-  color: ${colors.textcolor_dark};
+  color: ${({ theme }) => theme.text_inverse};
 `;
 
 const StyledSiteItem = styled.div.attrs({

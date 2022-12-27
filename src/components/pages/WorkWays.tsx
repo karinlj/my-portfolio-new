@@ -5,16 +5,20 @@ import { IWorkingWays } from "../../interfaces";
 import coverImage from "../../images/sunflower_4.jpg";
 import coverImageMobile from "../../images/sunflower_4_mobile.jpg";
 import styled from "styled-components";
-
-import { StyledImageWrapper } from "./Home";
-import { StyledCenteredText } from "../styles/general";
-import { StyledH2, StyledContentLoading } from "../styles/general";
+import { colors } from "../styles/variables";
+import {
+  StyledCenteredText,
+  StyledImageWrapper,
+  StyledH2,
+  StyledContentLoading,
+} from "../styles/general";
 
 const StyledSubHeader = styled(StyledH2).attrs({
   className: "styled_sub_header",
 })`
   font-family: "Amatic SC", cursive;
   font-weight: 700;
+  color: ${colors.textcolor_light};
 `;
 
 const WorkWays = () => {

@@ -14,9 +14,11 @@ const StyledBgWrapper = styled.section.attrs({
 })`
   position: relative;
   padding: 3rem 1rem;
-  background: ${colors.background_light};
+  background: ${({ theme }) => theme.background_inverse};
+  color: ${({ theme }) => theme.text_inverse};
   border-radius: ${themeSettings.themeBorder_radius};
   height: 100%;
+  transition: all 0.2s linear;
   @media ${device.mobileS} {
     padding: 3rem 2rem;
   }
@@ -24,7 +26,7 @@ const StyledBgWrapper = styled.section.attrs({
 
 const StyledTitle = styled(StyledH2)`
   font-size: 1.3rem;
-  color: ${colors.textcolor_dark};
+  color: ${({ theme }) => theme.text_inverse};
   @media ${device.mobileM} {
     font-size: 1.6rem;
   }

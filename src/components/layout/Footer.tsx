@@ -20,7 +20,9 @@ const FooterSection = styled.footer.attrs({
 const FooterLogoWrapper = styled.section.attrs({
   className: "footer_logo_wrapper",
 })`
-  float: right;
+  @media ${device.mobileM} {
+    float: right;
+  }
 `;
 
 const FooterLogoSection = styled.section.attrs({
@@ -56,7 +58,7 @@ const Footer = () => {
     <FooterSection>
       <div className="container">
         <div className="row justify-content-end">
-          <div className="col-12 col-md-4 col-xl-3" style={{ clear: "both" }}>
+          <div className="col-12 col-md-6" style={{ clear: "both" }}>
             <FooterLogoWrapper>
               <FooterLogoSection>
                 <p>Powered by</p>

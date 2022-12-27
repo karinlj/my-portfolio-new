@@ -5,7 +5,7 @@ import { ISkillItem } from "../../interfaces";
 import { StyledContentLoading } from "../styles/general";
 import { StyledH2 } from "../styles/general";
 import styled from "styled-components";
-import { device, colors } from "../styles/variables";
+import { device } from "../styles/variables";
 
 const StyledSkillsSection = styled.section.attrs({
   className: "styled_skills_section",
@@ -28,6 +28,7 @@ const StyledSubHeader = styled(StyledH2)`
   font-size: 1rem;
   margin-bottom: 2rem;
   line-height: 1.4;
+  color: ${({ theme }) => theme.text};
 `;
 
 const StyledBoxItem = styled.div.attrs({
@@ -44,7 +45,6 @@ const StyledBoxItem = styled.div.attrs({
   .icon {
     margin-bottom: 0.5rem;
     font-size: 2.5rem;
-    //color: ${colors.textcolor_light};
   }
   .text {
     font-size: 0.75rem;

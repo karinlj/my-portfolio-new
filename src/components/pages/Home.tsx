@@ -5,41 +5,12 @@ import coverImageMobile from "../../images/sunflower_1_mobile.jpg";
 import { client } from "../../client";
 import { IAbout } from "../../interfaces";
 import styled from "styled-components";
-import { device, themeSettings } from "../styles/variables";
-import { StyledH1, StyledContentLoading } from "../styles/general";
-
-//with props
-export const StyledImageWrapper = styled.section.attrs(
-  ({ className }): any => ({
-    className: "cover_image_wrapper",
-  })
-)`
-  position: relative;
-  border-radius: ${themeSettings.themeBorder_radius};
-  min-height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-image: url(${(props) => props.mobileImage});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  @media ${device.mobileM} {
-    background-image: url(${(props) => props.image});
-    height: calc(100vh - 7rem);
-  }
-  &::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.6);
-    content: "";
-    display: block;
-    border-radius: ${themeSettings.themeBorder_radius};
-  }
-`;
+import { device, colors } from "../styles/variables";
+import {
+  StyledH1,
+  StyledContentLoading,
+  StyledImageWrapper,
+} from "../styles/general";
 
 const StyledHeadingSection = styled.section.attrs({
   className: "heading_section",
@@ -54,6 +25,7 @@ const StyledHomeHeading = styled(StyledH1).attrs({
   className: "home_heading",
 })`
   font-size: 3.8rem;
+  color: ${colors.textcolor_light};
   @media ${device.mobileS} {
     font-size: 5.5rem;
   }
@@ -72,6 +44,7 @@ const StyledHomeSubHeading = styled(StyledH1).attrs({
   className: "home_sub_heading",
 })`
   font-size: 1.6rem;
+  color: ${colors.textcolor_light};
   @media ${device.mobileS} {
     font-size: 2rem;
   }

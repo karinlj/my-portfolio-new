@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import NavigationLinks from "./NavigationLinks";
-import ToggleBtn from "../../components/ToggleBtn";
+import ToggleMenuBtn from "../../components/ToggleMenuBtn";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { device, colors } from "../styles/variables";
@@ -31,8 +31,12 @@ const StyledNavHomeLinkItem = styled(StyledLinkItem).attrs(
     className: "nav_home_link_item",
   })
 )`
+  position: static;
   height: 50px;
   color: transparent;
+  @media ${device.mobileM} {
+    position: relative;
+  }
   a.link {
     color: ${colors.linkcolor};
     &.active,
@@ -46,8 +50,12 @@ const StyledNavHomeLinkItem = styled(StyledLinkItem).attrs(
     font-size: 2.8rem;
     line-height: 1;
     width: 25px;
+    top: 0.5rem;
+    left: 0.8rem;
     @media ${device.mobileM} {
       width: 50px;
+      top: 0;
+      left: 0;
     }
   }
   p.link_text {
@@ -77,7 +85,7 @@ const StyledNavbarMobile = styled.nav`
   height: 100%;
   position: fixed;
   right: 0;
-  top: 4rem;
+  top: 3.5rem;
   width: 50px;
   opacity: 0;
   z-index: 100;
@@ -119,7 +127,7 @@ const NavBar = () => {
         </NavLink>
       </StyledNavHomeLinkItem>
 
-      <ToggleBtn toggleMenu={toggleMenu} mobileOpen={mobileOpen} />
+      <ToggleMenuBtn toggleMenu={toggleMenu} mobileOpen={mobileOpen} />
 
       <StyledNavbarMobile
         className={`navbar_mobile ${mobileOpen ? "navbar_mobile_open" : ""}`}

@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { colors, device } from "./variables";
+import { colors, device, themeSettings } from "./variables";
 
 //typography
 export const BaseHeader = styled.span`
-  color: ${colors.textcolor_light};
+  color: ${({ theme }) => theme.text};
   font-weight: 500;
   position: relative;
   line-height: 1.2;
@@ -19,7 +19,6 @@ export const StyledH1 = styled(BaseHeader)`
     font-size: 3.3rem;
   }
   @media ${device.laptopL} {
-    //font-size: 3.5rem;
     font-size: 2.9rem;
   }
 `;
@@ -41,7 +40,6 @@ export const StyledH2 = styled(BaseHeader)`
 `;
 export const StyledH3 = styled(BaseHeader)`
   font-size: 1.2rem;
-  // line-height: 1.4;
   @media ${device.mobileS} {
     font-size: 1.3rem;
   }
@@ -189,5 +187,38 @@ export const StyledProjects = styled.section`
   .col-md-6,
   .col-lg-4 {
     margin-bottom: 2rem;
+  }
+`;
+
+//image wrapper with props
+export const StyledImageWrapper = styled.section.attrs(
+  ({ className }): any => ({
+    className: "cover_image_wrapper",
+  })
+)`
+  position: relative;
+  border-radius: ${themeSettings.themeBorder_radius};
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(${(props) => props.mobileImage});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media ${device.mobileM} {
+    background-image: url(${(props) => props.image});
+    height: calc(100vh - 7rem);
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    content: "";
+    display: block;
+    border-radius: ${themeSettings.themeBorder_radius};
   }
 `;

@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import HeaderPages from "../layout/HeaderPages";
 import { client } from "../../client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { IAbout } from "../../interfaces";
-//import monstera_dark from "../../images/monstera_dark_2.jpg";
 import coverImage from "../../images/sunflower_8.jpg";
 import coverImageMobile from "../../images/sunflower_8_mobile.jpg";
-import { StyledImageWrapper } from "./Home";
-import { StyledCenteredText, StyledContentLoading } from "../styles/general";
+import {
+  StyledCenteredText,
+  StyledContentLoading,
+  StyledImageWrapper,
+} from "../styles/general";
 
 const AboutMe = () => {
   const [aboutData, setAboutData] = useState<IAbout | null>(null);

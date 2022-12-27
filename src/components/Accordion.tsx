@@ -10,7 +10,7 @@ const StyledAccordion = styled.button.attrs({
   background: transparent;
   border: none;
   padding: 0.4rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid ${({ theme }) => theme.border_color_inverse};
   margin: 0.5rem auto;
   border-radius: ${themeSettings.themeBorder_radius};
   width: 100%;
@@ -26,7 +26,7 @@ const StyledAccordion = styled.button.attrs({
       font-size: 0.9rem;
       margin-left: 0.5rem;
       height: 1rem;
-      color: $textcolor_dark;
+      color: ${({ theme }) => theme.text_inverse};
       padding: 2px;
       &:hover {
         color: ${colors.linkcolor};
@@ -61,7 +61,7 @@ const StyledHeading = styled(StyledH4)`
   font-size: 0.8rem;
   font-weight: 500;
   margin-bottom: 0;
-  color: ${colors.textcolor_dark};
+  color: ${({ theme }) => theme.text_inverse};
   @media ${device.mobileM} {
     font-size: 0.9rem;
   }

@@ -11,25 +11,32 @@ import Footer from "./components/layout/Footer";
 import GlobalStyle from "./components/styles/globalStyles";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { device, greenTheme, grayTheme } from "./components/styles/variables";
+import { device, lightTheme, grayTheme } from "./components/styles/variables";
 import styled from "styled-components";
 
-export const StyledToggleBtn = styled.button.attrs({
+export const StyledToggleThemeBtn = styled.button.attrs({
   className: "toggle_btn",
 })`
   border: none;
   background: transparent;
-  color: ${({ theme }) => theme.btn_background};
-  position: relative;
+  color: ${({ theme }) => theme.btn_color};
   position: absolute;
-  top: 4.7rem;
-  right: 1.1rem;
+  width: 35px;
+  height: 35px;
+  top: 0.9rem;
+  right: 3.5rem;
   display: block;
+  border-radius: 50%;
+  line-height: 1;
   @media ${device.mobileM} {
-    top: 1.1rem;
+    right: 1.5rem;
+  }
+  @media ${device.laptopL} {
+    width: 50px;
+    height: 50px;
   }
   &:hover {
-    filter: drop-shadow(0 0 3px white);
+    background: ${({ theme }) => theme.btn_background};
   }
   i {
     font-size: 1.2rem;
@@ -47,14 +54,14 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <ThemeProvider theme={isGrayMode ? grayTheme : greenTheme}>
-        <StyledToggleBtn onClick={themeToggler}>
+      <ThemeProvider theme={isGrayMode ? grayTheme : lightTheme}>
+        <StyledToggleThemeBtn onClick={themeToggler} aria-label="Toggle theme">
           {isGrayMode ? (
-            <i className="fa-solid fa-paintbrush" title="Green Mode?"></i>
+            <i className="fa-regular fa-sun" aria-hidden="true"></i>
           ) : (
-            <i className="fa-solid fa-paintbrush" title="Gray Mode?"></i>
+            <i className="fa-regular fa-moon" aria-hidden="true"></i>
           )}
-        </StyledToggleBtn>
+        </StyledToggleThemeBtn>
         <GlobalStyle />
         <NavBar />
         <div className="site_content">

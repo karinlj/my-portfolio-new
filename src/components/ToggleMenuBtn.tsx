@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "./styles/variables";
+import { device, colors } from "./styles/variables";
 
 const StyledMenuBtn = styled.button`
   position: absolute;
@@ -23,7 +23,7 @@ const StyledMenuBtn = styled.button`
     flex: none;
     width: 100%;
     height: 2px;
-    background: #fff;
+    background: ${colors.textcolor_light};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,20 +80,16 @@ interface IProps {
   toggleMenu(): void;
   mobileOpen: boolean;
 }
-const ToggleBtn = ({ toggleMenu, mobileOpen }: IProps) => {
+const ToggleMenuBtn = ({ toggleMenu, mobileOpen }: IProps) => {
   return (
     <StyledMenuBtn
       className={mobileOpen ? "menu_btn_clicked" : "menu_btn"}
       aria-label="Mobile Menu"
       aria-expanded={mobileOpen ? "true" : "false"}
       onClick={toggleMenu}
-      data-testid="toggleBtn"
     >
       <div aria-hidden="true"></div>
     </StyledMenuBtn>
   );
 };
-
-//      className={`menu_btn ${mobileOpen ? "menu_btn_clicked" : ""}`}
-
-export default ToggleBtn;
+export default ToggleMenuBtn;
