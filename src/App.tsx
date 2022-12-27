@@ -18,30 +18,33 @@ export const StyledToggleThemeBtn = styled.button.attrs({
   className: "toggle_btn",
 })`
   border: none;
-  background: transparent;
+  background: ${({ theme }) => theme.btn_background};
   color: ${({ theme }) => theme.btn_color};
   position: absolute;
-  width: 35px;
-  height: 35px;
-  top: 0.9rem;
+  width: 30px;
+  height: 30px;
+  top: 1.1rem;
   right: 3.5rem;
   display: block;
   border-radius: 50%;
   line-height: 1;
-  @media ${device.mobileM} {
-    right: 1.5rem;
-  }
-  @media ${device.laptopL} {
-    width: 50px;
-    height: 50px;
-  }
+  transition: all 0.3s ease-in;
   &:hover {
-    background: ${({ theme }) => theme.btn_background};
+    filter: drop-shadow(0 0 3px white);
+  }
+  @media ${device.mobileM} {
+    right: 1.1rem;
+    background: transparent;
+  }
+  @media ${device.laptop} {
+    width: 40px;
+    height: 40px;
   }
   i {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     position: relative;
-    @media ${device.laptop} {
+
+    @media ${device.mobileM} {
       font-size: 1.4rem;
     }
   }
@@ -57,9 +60,9 @@ function App() {
       <ThemeProvider theme={isGrayMode ? grayTheme : lightTheme}>
         <StyledToggleThemeBtn onClick={themeToggler} aria-label="Toggle theme">
           {isGrayMode ? (
-            <i className="fa-regular fa-sun" aria-hidden="true"></i>
+            <i className="fa-solid fa-sun" aria-hidden="true"></i>
           ) : (
-            <i className="fa-regular fa-moon" aria-hidden="true"></i>
+            <i className="fa-solid fa-moon" aria-hidden="true"></i>
           )}
         </StyledToggleThemeBtn>
         <GlobalStyle />

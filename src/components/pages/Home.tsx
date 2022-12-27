@@ -24,7 +24,7 @@ const StyledHeadingSection = styled.section.attrs({
 const StyledHomeHeading = styled(StyledH1).attrs({
   className: "home_heading",
 })`
-  font-size: 3.8rem;
+  font-size: 4rem;
   color: ${colors.textcolor_light};
   @media ${device.mobileS} {
     font-size: 5.5rem;
@@ -43,10 +43,10 @@ const StyledHomeHeading = styled(StyledH1).attrs({
 const StyledHomeSubHeading = styled(StyledH1).attrs({
   className: "home_sub_heading",
 })`
-  font-size: 1.6rem;
+  font-size: 2rem;
   color: ${colors.textcolor_light};
   @media ${device.mobileS} {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   @media ${device.laptop} {
     font-size: 2.4rem;
