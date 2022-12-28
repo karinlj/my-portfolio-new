@@ -19,7 +19,7 @@ const StyledNavLinks = styled.div.attrs({
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: ${({ theme }) => theme.background_darker};
+  background: ${({ theme }) => theme.background_nav};
   height: auto;
   padding: 2rem 0;
   border-bottom-right-radius: 3px;

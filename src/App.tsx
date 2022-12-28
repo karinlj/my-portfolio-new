@@ -11,15 +11,20 @@ import Footer from "./components/layout/Footer";
 import GlobalStyle from "./components/styles/globalStyles";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { device, lightTheme, grayTheme } from "./components/styles/variables";
+import {
+  device,
+  lightTheme,
+  grayTheme,
+  colors,
+} from "./components/styles/variables";
 import styled from "styled-components";
 
 export const StyledToggleThemeBtn = styled.button.attrs({
   className: "toggle_btn",
 })`
   border: none;
-  background: ${({ theme }) => theme.btn_background};
-  color: ${({ theme }) => theme.btn_color};
+  background: transparent;
+  color: ${colors.textcolor_light};
   position: absolute;
   width: 30px;
   height: 30px;
@@ -34,7 +39,7 @@ export const StyledToggleThemeBtn = styled.button.attrs({
   }
   @media ${device.mobileM} {
     right: 1.1rem;
-    background: transparent;
+    color: ${({ theme }) => theme.btn_color};
   }
   @media ${device.laptop} {
     width: 40px;
@@ -60,9 +65,9 @@ function App() {
       <ThemeProvider theme={isGrayMode ? grayTheme : lightTheme}>
         <StyledToggleThemeBtn onClick={themeToggler} aria-label="Toggle theme">
           {isGrayMode ? (
-            <i className="fa-solid fa-sun" aria-hidden="true"></i>
-          ) : (
             <i className="fa-solid fa-moon" aria-hidden="true"></i>
+          ) : (
+            <i className="fa-solid fa-sun" aria-hidden="true"></i>
           )}
         </StyledToggleThemeBtn>
         <GlobalStyle />

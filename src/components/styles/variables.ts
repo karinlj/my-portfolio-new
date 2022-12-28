@@ -6,10 +6,9 @@ import "styled-components";
 declare module "styled-components" {
   export interface DefaultTheme {
     background: string;
-    background_darker: string;
+    background_nav: string;
     background_inverse: string;
     btn_color: string;
-    btn_background: string;
     text: string;
     text_inverse: string;
     border_color_inverse: string;
@@ -23,7 +22,7 @@ export const colors = {
   background_light: "#f9f9f9", //"#f7f4f1",
   //text
   textcolor_light: "#f9f9f9",
-  textcolor_dark: "#404159",
+  textcolor_dark: "#404040",
   text_gray: "#737373",
   //other
   lightgray: "#eee",
@@ -34,20 +33,18 @@ export const colors = {
 
 export const lightTheme: DefaultTheme = {
   background: colors.background_light,
-  background_darker: colors.background_darkgrey,
+  background_nav: colors.background_darkgrey,
   background_inverse: colors.background_darkgrey,
-  btn_color: colors.background_darkgrey,
-  btn_background: "#4d4d4d", //"#ede5de",
+  btn_color: colors.textcolor_dark,
   text: colors.textcolor_dark,
   text_inverse: colors.textcolor_light,
-  border_color_inverse: "#404040",
+  border_color_inverse: colors.textcolor_dark,
 };
 export const grayTheme: DefaultTheme = {
   background: colors.background_darkgrey,
-  background_darker: colors.background_darkgrey_darker,
+  background_nav: colors.background_darkgrey_darker,
   background_inverse: colors.textcolor_light,
   btn_color: colors.textcolor_light,
-  btn_background: "#333",
   text: colors.textcolor_light,
   text_inverse: colors.textcolor_dark,
   border_color_inverse: "#e6e6e6",
