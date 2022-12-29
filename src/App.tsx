@@ -37,6 +37,9 @@ export const StyledToggleThemeBtn = styled.button.attrs({
   &:hover {
     filter: drop-shadow(0 0 3px white);
   }
+  &:active {
+    filter: none;
+  }
   @media ${device.mobileM} {
     right: 1.1rem;
     color: ${({ theme }) => theme.btn_color};
@@ -65,9 +68,9 @@ function App() {
       <ThemeProvider theme={isGrayMode ? grayTheme : lightTheme}>
         <StyledToggleThemeBtn onClick={themeToggler} aria-label="Toggle theme">
           {isGrayMode ? (
-            <i className="fa-solid fa-moon" aria-hidden="true"></i>
+            <i className="fa-regular fa-moon" aria-hidden="true"></i>
           ) : (
-            <i className="fa-solid fa-sun" aria-hidden="true"></i>
+            <i className="fa-regular fa-sun" aria-hidden="true"></i>
           )}
         </StyledToggleThemeBtn>
         <GlobalStyle />

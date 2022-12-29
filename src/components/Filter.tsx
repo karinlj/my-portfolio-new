@@ -24,6 +24,7 @@ const StyledFilterOptions = styled.section.attrs({
     padding-left: 1.6rem;
     margin-bottom: 12px;
     margin-right: 0.7rem;
+    width: 1rem;
     cursor: pointer;
     font-size: 0.9rem;
     -webkit-user-select: none;

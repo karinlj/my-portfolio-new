@@ -50,7 +50,7 @@ const StyledNavHomeLinkItem = styled(StyledLinkItem).attrs(
     font-size: 2.8rem;
     line-height: 1;
     width: 25px;
-    top: 0.5rem;
+    top: 0.6rem;
     left: 0.8rem;
     @media ${device.mobileM} {
       width: 50px;
@@ -89,12 +89,14 @@ const StyledNavbarMobile = styled.nav`
   width: 50px;
   opacity: 0;
   z-index: 100;
+  pointer-events: none;
   @media ${device.mobileM} {
     display: none;
   }
   //toggle open menu
   &.navbar_mobile_open {
     animation: transitionIn 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    pointer-events: all;
   }
 `;
 const NavBar = () => {
