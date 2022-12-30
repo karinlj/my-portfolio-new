@@ -81,7 +81,7 @@ const Curriculum = () => {
   }, []);
 
   return (
-    <main className="curriculum">
+    <main>
       <HeaderPages heading="Curriculum" />
       <div className="container">
         <div className="row">

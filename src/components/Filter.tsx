@@ -156,7 +156,7 @@ export const Filter = ({ displayItems, activeFilter }: IProps) => {
   }, [techFilter]);
 
   return (
-    <main>
+    <section>
       <StyledSubHeader>Techniques</StyledSubHeader>
       <StyledFilterOptions>
         {techFilter.map((item, index) => {
@@ -176,6 +176,6 @@ export const Filter = ({ displayItems, activeFilter }: IProps) => {
           );
         })}
       </StyledFilterOptions>
-    </main>
+    </section>
   );
 };

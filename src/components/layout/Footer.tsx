@@ -1,19 +1,41 @@
 import contentful_logo_small from "../../images/contentful_logo_small.png";
 import react_logo_small from "../../images/react_logo_small.png";
 import styled from "styled-components";
-import { device } from "../styles/variables";
+import { device, colors } from "../styles/variables";
 
 const FooterSection = styled.footer.attrs({
   className: "footer_section",
 })`
   padding: 1rem 1.5rem;
   min-height: 150px;
+  position: relative;
   @media ${device.mobileM} {
     margin-left: 5rem;
   }
   p {
     margin-bottom: 0;
     font-size: 0.7rem;
+  }
+`;
+
+const StyledBackToTopLink = styled.div.attrs({
+  className: "back_to_top_link",
+})`
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-in;
+  &:hover {
+    transform: translateY(-4px);
+    filter: drop-shadow(0 0 3px white);
+  }
+  &:active {
+    transform: translateY(-4px);
+    filter: none;
+  }
+  a {
+    color: ${colors.linkcolor};
   }
 `;
 
@@ -86,6 +108,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <StyledBackToTopLink>
+        <a href="#siteContent">
+          <i className="fa-solid fa-angles-up"></i>
+        </a>
+      </StyledBackToTopLink>
     </FooterSection>
   );
 };

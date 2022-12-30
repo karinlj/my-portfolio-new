@@ -83,7 +83,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="home">
+    <main>
       <div className="container">
         <div className="row">
           <div className="col-12">

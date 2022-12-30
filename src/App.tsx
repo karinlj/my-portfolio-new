@@ -75,7 +75,7 @@ function App() {
         </StyledToggleThemeBtn>
         <GlobalStyle />
         <NavBar />
-        <div className="site_content">
+        <div className="site_content" id="siteContent">
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<About />} path="/about" />
