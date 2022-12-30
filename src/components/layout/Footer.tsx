@@ -110,7 +110,11 @@ const Footer = () => {
       </div>
       <StyledBackToTopLink>
         <a href="#siteContent">
-          <i className="fa-solid fa-angles-up"></i>
+          <i
+            className="fa-solid fa-angles-up"
+            aria-hidden="true"
+            aria-label="To top of page"
+          ></i>
         </a>
       </StyledBackToTopLink>
     </FooterSection>
