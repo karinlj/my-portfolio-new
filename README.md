@@ -30,6 +30,7 @@ To run
 
 - React.js
 - Typescript
+- Styled Components
 - Contentful
 
 ### Author
