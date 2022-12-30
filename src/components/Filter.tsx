@@ -109,6 +109,13 @@ const StyledFilterOptions = styled.section.attrs({
         }
       }
     }
+    &:active {
+      input {
+        ~ .checkmark {
+          filter: none;
+        }
+      }
+    }
   }
 `;
 

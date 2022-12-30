@@ -2,7 +2,9 @@
 
 ### Description
 
-Portfolio project in progress using React.js and Contentful.
+Portfolio project using React.js, Typescript, Styled Components and Contentful.
+
+![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
 
 ##### Url: http://karinljunggren.com/
 
