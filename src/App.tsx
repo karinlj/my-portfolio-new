@@ -68,9 +68,9 @@ function App() {
       <ThemeProvider theme={isGrayMode ? grayTheme : lightTheme}>
         <StyledToggleThemeBtn onClick={themeToggler} aria-label="Toggle theme">
           {isGrayMode ? (
-            <i className="fa-regular fa-moon" aria-hidden="true"></i>
-          ) : (
             <i className="fa-regular fa-sun" aria-hidden="true"></i>
+          ) : (
+            <i className="fa-regular fa-moon" aria-hidden="true"></i>
           )}
         </StyledToggleThemeBtn>
         <GlobalStyle />

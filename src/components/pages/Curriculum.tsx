@@ -126,8 +126,8 @@ const Curriculum = () => {
           </div>
         </div>
 
-        <StyledLink to="/curriculum_dev.pdf" target="_blank" download>
-          Download Curriculum.pdf
+        <StyledLink to="/resume_dev_sv.pdf" target="_blank" download>
+          Download Resume.pdf
         </StyledLink>
       </div>
     </main>
