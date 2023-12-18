@@ -4,14 +4,18 @@ import { colors, device, themeSettings } from "./variables";
 //typography
 export const BaseHeader = styled.span`
   color: ${({ theme }) => theme.text};
-  font-weight: 500;
+  font-weight: 400;
   position: relative;
   line-height: 1.2;
 `;
 export const StyledH1 = styled(BaseHeader)`
-  font-family: "Amatic SC", cursive;
+  /* font-family: "Amatic SC", cursive; */
+  font-family: "Rubik";
   font-weight: 700;
-  font-size: 2.3rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-top: 4rem;
+  /* font-size: 2.3rem;
   @media ${device.mobileM} {
     font-size: 2.8rem;
   }
@@ -20,7 +24,7 @@ export const StyledH1 = styled(BaseHeader)`
   }
   @media ${device.laptopL} {
     font-size: 2.9rem;
-  }
+  } */
 `;
 export const StyledH2 = styled(BaseHeader)`
   font-size: 2rem;
@@ -75,13 +79,14 @@ export const StyledContentLoading = styled.p`
 export const StyledCenteredText = styled.section.attrs({
   className: "centered_text",
 })`
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 3rem 0;
-  @media ${device.mobileM} {
+  width: 70%;
+  /* @media ${device.mobileM} {
     width: 75%;
     padding: 0;
   }
-  @media ${device.laptop} {
+ @media ${device.laptop} {
     width: 80%;
   }
   @media ${device.laptopL} {
@@ -89,7 +94,7 @@ export const StyledCenteredText = styled.section.attrs({
   }
   @media ${device.desktop} {
     width: 50%;
-  }
+  } */
   h1,
   h2 {
     color: ${colors.textcolor_light};
@@ -111,6 +116,12 @@ export const StyledCenteredText = styled.section.attrs({
   }
   ul {
     margin-bottom: 2rem;
+  }
+  p {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 2px;
   }
 `;
 
@@ -198,14 +209,16 @@ export const StyledImageWrapper = styled.section.attrs(
 )`
   position: relative;
   border-radius: ${themeSettings.themeBorder_radius};
-  min-height: 600px;
+  /* min-height: 600px; */
+  min-height: 800px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   background-image: url(${(props) => props.mobileImage});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-left: 8rem;
   @media ${device.mobileM} {
     background-image: url(${(props) => props.image});
     height: calc(100vh - 7rem);
@@ -216,7 +229,8 @@ export const StyledImageWrapper = styled.section.attrs(
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
+    background: rgba(0, 0, 0, 0.6);
     content: "";
     display: block;
     border-radius: ${themeSettings.themeBorder_radius};

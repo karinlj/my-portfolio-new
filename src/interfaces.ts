@@ -4,13 +4,29 @@ export interface IFilter {
   isChecked: boolean | undefined;
 }
 
-export interface IAbout {
+export interface IHome {
   fields: {
-    heading: string;
-    text: string;
-    aboutContent: any;
+    preamble: string;
+    title: string;
+    description: string;
   };
 }
+export interface IAbout {
+  fields: {
+    title: string;
+    aboutContent: any;
+    link: string;
+  };
+}
+
+// export interface IAbout {
+//   fields: {
+//     preamble: string;
+//     heading: string;
+//     text: string;
+//     aboutContent: any;
+//   };
+// }
 
 export interface ISkillIcon {
   icon: string;

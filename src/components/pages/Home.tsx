@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 //import monstera_lighter from "../../images/monstera_lighter.jpg";
-import coverImage from "../../images/sunflower_1.jpg";
+// import coverImage from "../../images/sunflower_1.jpg";
 import coverImageMobile from "../../images/sunflower_1_mobile.jpg";
+import coverImage from "../../images/me.jpg";
 import { client } from "../../client";
-import { IAbout } from "../../interfaces";
+import { IHome } from "../../interfaces";
 import styled from "styled-components";
 import { device, colors } from "../styles/variables";
 import {
+  BaseHeader,
   StyledH1,
   StyledContentLoading,
   StyledImageWrapper,
@@ -15,32 +17,42 @@ import {
 const StyledHeadingSection = styled.section.attrs({
   className: "heading_section",
 })`
-  display: flex;
+  padding: 1rem;
+  /* display: flex;
   justify-content: center;
   padding: 2rem;
-  position: relative;
+  position: relative; */
 `;
 
 const StyledHomeHeading = styled(StyledH1).attrs({
   className: "home_heading",
 })`
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 15rem;
+  margin-bottom: 3rem;
   font-size: 4rem;
-  color: ${colors.textcolor_light};
+  /* color: ${colors.textcolor_light}; */
+  color: ${colors.lilacPastel};
   @media ${device.mobileS} {
     font-size: 5.5rem;
   }
   @media ${device.mobileM} {
     font-size: 6.5rem;
   }
-  @media ${device.laptop} {
+  /* @media ${device.laptop} {
     font-size: 7rem;
   }
   @media ${device.laptopL} {
     font-size: 8rem;
+  } */
+
+  @media ${device.laptopL} {
+    font-size: 13rem;
   }
 `;
 
-const StyledHomeSubHeading = styled(StyledH1).attrs({
+const StyledHomeSubHeading = styled(BaseHeader).attrs({
   className: "home_sub_heading",
 })`
   font-size: 2rem;
@@ -49,32 +61,40 @@ const StyledHomeSubHeading = styled(StyledH1).attrs({
     font-size: 2.2rem;
   }
   @media ${device.laptop} {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
   }
+  /* font-size: 2rem;
+  color: ${colors.textcolor_light};
+  @media ${device.mobileS} {
+    font-size: 2.2rem;
+  }
+  @media ${device.laptop} {
+    font-size: 2.4rem;
+  } */
 `;
 
 const Home = () => {
-  const [aboutData, setAboutData] = useState<IAbout | null>(null);
-  const [loadingAbout, setLoadingAbout] = useState(false);
+  const [homeData, setHomeData] = useState<IHome | null>(null);
+  const [loadingHome, setloadingHome] = useState(false);
 
   //stop the fetch when component using it unmounts
   const abortContrl = new AbortController();
-  const getAboutData = () => {
+  const getHomeData = () => {
     client
       .getEntries({
-        content_type: "aboutData",
+        content_type: "homeData",
         signal: abortContrl.signal,
       })
       .then((response) => {
-        setAboutData(response.items[0] as any);
-        setLoadingAbout(false);
+        setHomeData(response.items[0] as any);
+        setloadingHome(false);
       })
       .catch((error) => console.log("error", error));
   };
 
   useEffect(() => {
-    setLoadingAbout(true);
-    getAboutData();
+    setloadingHome(true);
+    getHomeData();
     //clean up
     return () => {
       abortContrl.abort();
@@ -92,18 +112,23 @@ const Home = () => {
               mobileImage={coverImageMobile}
             >
               <StyledHeadingSection>
-                {loadingAbout && (
+                {loadingHome && (
                   <StyledContentLoading>...Loading</StyledContentLoading>
                 )}
-                {aboutData ? (
-                  <div>
-                    <StyledHomeHeading as="h1">
-                      {aboutData.fields.heading}
-                    </StyledHomeHeading>
+                {homeData ? (
+                  <>
                     <StyledHomeSubHeading as="p">
-                      {aboutData.fields.text}
+                      {homeData.fields.preamble}
                     </StyledHomeSubHeading>
-                  </div>
+                    <div>
+                      <StyledHomeHeading as="h1">
+                        {homeData.fields.title}
+                      </StyledHomeHeading>
+                    </div>
+                    <StyledHomeSubHeading as="p">
+                      {homeData.fields.description}
+                    </StyledHomeSubHeading>
+                  </>
                 ) : (
                   ""
                 )}

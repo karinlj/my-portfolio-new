@@ -79,15 +79,18 @@ section {
   }
 }
 .container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   @media all and (min-width: 1700px) {
-    max-width: 1500px;
+    /* max-width: 1500px; */
+    max-width: 1600px;
   }
 }
 .cursive {
-  font-family: "Amatic SC", cursive;
+  /* font-family: "Amatic SC", cursive; */
+  font-family: "Rubik", cursive;
   font-weight: 700;
 }
 `;

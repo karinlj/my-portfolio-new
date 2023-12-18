@@ -27,8 +27,13 @@ export const colors = {
   //other
   lightgray: "#eee",
   navcolor: "#f7f4f1",
-  linkcolor: "#ff66b3",
   bluecolor: "#2e9ce6",
+  lilacPastel: "#DFB2F4",
+  orange: "#F68C70",
+  pink_light: "#f49097",
+  pink_dark: "#f55c7a",
+  // linkcolor: "#ff66b3",
+  linkcolor: "#f49097",
 };
 
 export const lightTheme: DefaultTheme = {
